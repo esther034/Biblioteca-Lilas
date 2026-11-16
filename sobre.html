@@ -1,0 +1,192 @@
+<!-- Projeto Front-End: Biblioteca Lilás - Universidade Positivo -->
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sobre Nós | Biblioteca Lilás</title>
+    <link rel="icon" href="imgs/icon.jfif">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .banner-sobre {
+            background: linear-gradient(135deg, #e7d8f9 0%, #f6f0ff 100%);
+            border: 1px solid #d8c2f5;
+            padding: 35px;
+            border-radius: 14px;
+            margin-bottom: 35px;
+        }
+        .item-valor {
+            background-color: #ffffff;
+            border-left: 4px solid #6b3bb8;
+            padding: 16px 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.04);
+            margin-bottom: 14px;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="topo-principal">
+            <div class="topo-container">
+                <a href="index.html" class="logo">
+                    <img src="imgs/icon.jfif" alt="Logo da Biblioteca Lilás">
+                    <div class="logo-texto">
+                        Biblioteca <span>Lilás</span>
+                        <small>Livraria & Espaço Cultural</small>
+                    </div>
+                </a>
+
+                <div class="topo-busca">
+                    <form action="catalogo.html" method="GET" class="form-busca-topo">
+                        <input type="text" name="busca" placeholder="O que você procura? (livro, autor, jogo...)" aria-label="Pesquisar">
+                        <button type="submit" aria-label="Buscar">🔍</button>
+                    </form>
+                </div>
+
+                <div class="topo-acoes">
+                    <a href="favoritos.html" class="acao-btn" title="Meus Favoritos">
+                        <span class="icone-acao">♡</span>
+                        <span class="texto-acao">Favoritos</span>
+                        <span id="contadorFavoritos" class="badge-contador">0</span>
+                    </a>
+                    <a href="carrinho.html" class="acao-btn acao-carrinho" title="Meu Carrinho">
+                        <span class="icone-acao">🛒</span>
+                        <span class="texto-acao">Carrinho</span>
+                        <span id="contadorCarrinho" class="badge-contador badge-carrinho">0</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <nav class="barra-navegacao">
+            <div class="nav-container">
+                <ul id="menu">
+                    <li><a href="index.html">Início</a></li>
+                    <li><a href="catalogo.html">Catálogo Completo</a></li>
+                    <li><a href="livros.html">Fantasia</a></li>
+                    <li><a href="romance.html">Romance</a></li>
+                    <li><a href="suspense.html">Suspense</a></li>
+                    <li><a href="jogos.html">Jogos</a></li>
+                    <li><a href="tabela.html">Prazos & Tarifas</a></li>
+                    <li><a href="reserva.html">Reservas</a></li>
+                    <li><a href="multimidia.html">Multimídia</a></li>
+                    <li><a href="sobre.html" class="ativo">Sobre</a></li>
+                    <li><a href="contatos.html">Contato</a></li>
+                    <li><a href="https://www.skoob.com.br" target="_blank" rel="noopener noreferrer" class="link-externo">Skoob ↗</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container">
+
+        <section class="banner-sobre">
+            <div class="banner-conteudo" style="max-width: 100%;">
+                <p class="tagline">CONHEÇA NOSSA TRAJETÓRIA</p>
+                <h1>Um refúgio para apaixonados pela palavra e pelo saber.</h1>
+                <p>
+                    Fundada com a proposta de tornar a leitura acessível, prazerosa e comunitária, a Biblioteca Lilás
+                    reúne um acervo diverso de literatura clássica, títulos juvenis contemporâneos, sagas de fantasia,
+                    dramas românticos, suspenses instigantes e uma ludoteca completa de jogos educativos.
+                </p>
+            </div>
+        </section>
+
+        <section class="secao-info-dupla">
+            <article class="bloco-info">
+                <h2>Nossa Missão & Propósito</h2>
+                <p>
+                    Democratizar o acesso a livros físicos e recursos multimídia de qualidade, cultivando o pensamento
+                    crítico, o vocabulário e o hábito prazeroso da leitura em todas as faixas etárias.
+                </p>
+                <div class="item-valor">
+                    <h3>Acolhimento & Comunidade</h3>
+                    <p>Espaço inclusivo e seguro para estudos individuais, encontros em grupo e oficinas culturais.</p>
+                </div>
+                <div class="item-valor">
+                    <h3>Variedade de Acervo</h3>
+                    <p>Atualização constante de obras, atendendo tanto ao currículo acadêmico quanto ao entretenimento.</p>
+                </div>
+                <div class="item-valor">
+                    <h3>Incentivo ao Raciocínio</h3>
+                    <p>Integração entre literatura e jogos de estratégia como xadrez e quebra-cabeças cognitivos.</p>
+                </div>
+            </article>
+
+            <article class="bloco-info">
+                <h2>Serviços Disponibilizados</h2>
+                <p>Confira os benefícios gratuitos oferecidos aos nossos frequentadores e associados:</p>
+                <ul style="margin-left: 20px; color: #513e6d; line-height: 2;">
+                    <li>Venda e empréstimo domiciliar com entrega ágil em Curitiba;</li>
+                    <li>Acesso à ludoteca para partidas de xadrez, Uno e quebra-cabeças;</li>
+                    <li>Salas com ar-condicionado e Wi-Fi gratuito para estudos acadêmicos;</li>
+                    <li>Clube do Livro mensal com debates e cafés temáticos;</li>
+                    <li>Estação de áudio e vídeo com materiais acessíveis e audiolivros;</li>
+                    <li>Sistema completo de carrinho de compras e favoritos online.</li>
+                </ul>
+            </article>
+        </section>
+
+        <section class="bloco-info" style="margin-bottom: 40px;">
+            <h2>Regras de Convivência na Biblioteca Lilás</h2>
+            <p>Para garantir o bem-estar e o foco de todos os leitores, pedimos atenção às seguintes diretrizes:</p>
+            <p>1. Manter o celular no modo silencioso ou vibratório nas dependências das salas de leitura;</p>
+            <p>2. Consumir alimentos e bebidas exclusivamente na área de convivência externa e cafeteria;</p>
+            <p>3. Zelar pela conservação das capas, lombadas e páginas dos livros emprestados;</p>
+            <p>4. Respeitar as datas limites de devolução para que outros leitores tenham acesso às obras.</p>
+        </section>
+
+    </main>
+
+    <footer>
+        <div class="footer-conteudo">
+            <div class="footer-coluna">
+                <h3>Biblioteca Lilás</h3>
+                <p>
+                    Incentivando o gosto pela leitura, o raciocínio e a criatividade através
+                    de um acervo moderno, acessível e diversificado para toda a comunidade.
+                </p>
+            </div>
+
+            <div class="footer-coluna">
+                <h3>Navegação Rápida</h3>
+                <ul>
+                    <li><a href="index.html">Início</a></li>
+                    <li><a href="catalogo.html">Catálogo Completo</a></li>
+                    <li><a href="tabela.html">Tabela de Tarifas e Regras</a></li>                    <li><a href="favoritos.html">Meus Favoritos</a></li>
+                    <li><a href="carrinho.html">Meu Carrinho</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-coluna">
+                <h3>Departamentos</h3>
+                <ul>
+                    <li><a href="livros.html">Fantasia & Ficção</a></li>
+                    <li><a href="romance.html">Romance & Poesia</a></li>
+                    <li><a href="suspense.html">Suspense & Mistério</a></li>
+                    <li><a href="jogos.html">Jogos de Mesa & Cartas</a></li>
+                    <li><a href="multimidia.html">Espaço Multimídia</a></li>
+                    <li><a href="contatos.html">Fale Conosco</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-coluna">
+                <h3>Links e Redes</h3>
+                <ul>
+                    <li><a href="https://www.skoob.com.br" target="_blank" rel="noopener noreferrer">Perfil no Skoob</a></li>
+                    <li><a href="https://books.google.com.br" target="_blank" rel="noopener noreferrer">Google Livros</a></li>
+                    <li><a href="https://www.up.edu.br" target="_blank" rel="noopener noreferrer">Universidade Positivo</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="footer-copy">
+            <p>© 2026 Biblioteca Lilás. Projeto Front-End para Web - Universidade Positivo. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="js/scripts.js"></script>
+</body>
+</html>

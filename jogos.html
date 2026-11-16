@@ -1,0 +1,298 @@
+<!-- Projeto Front-End: Biblioteca Lilás - Universidade Positivo -->
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jogos de Tabuleiro & Cartas | Biblioteca Lilás</title>
+    <link rel="icon" href="imgs/icon.jfif">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .topo-jogos {
+            background: linear-gradient(90deg, #ede3fa, #fdfbfe);
+            border-left: 5px solid #622da8;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="topo-principal">
+            <div class="topo-container">
+                <a href="index.html" class="logo">
+                    <img src="imgs/icon.jfif" alt="Logo da Biblioteca Lilás">
+                    <div class="logo-texto">
+                        Biblioteca <span>Lilás</span>
+                        <small>Livraria & Espaço Cultural</small>
+                    </div>
+                </a>
+
+                <div class="topo-busca">
+                    <form action="catalogo.html" method="GET" class="form-busca-topo">
+                        <input type="text" name="busca" placeholder="O que você procura? (livro, autor, jogo...)" aria-label="Pesquisar">
+                        <button type="submit" aria-label="Buscar">🔍</button>
+                    </form>
+                </div>
+
+                <div class="topo-acoes">
+                    <a href="favoritos.html" class="acao-btn" title="Meus Favoritos">
+                        <span class="icone-acao">♡</span>
+                        <span class="texto-acao">Favoritos</span>
+                        <span id="contadorFavoritos" class="badge-contador">0</span>
+                    </a>
+                    <a href="carrinho.html" class="acao-btn acao-carrinho" title="Meu Carrinho">
+                        <span class="icone-acao">🛒</span>
+                        <span class="texto-acao">Carrinho</span>
+                        <span id="contadorCarrinho" class="badge-contador badge-carrinho">0</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <nav class="barra-navegacao">
+            <div class="nav-container">
+                <ul id="menu">
+                    <li><a href="index.html">Início</a></li>
+                    <li><a href="catalogo.html">Catálogo Completo</a></li>
+                    <li><a href="livros.html">Fantasia</a></li>
+                    <li><a href="romance.html">Romance</a></li>
+                    <li><a href="suspense.html">Suspense</a></li>
+                    <li><a href="jogos.html" class="ativo">Jogos</a></li>
+                    <li><a href="tabela.html">Prazos & Tarifas</a></li>
+                    <li><a href="reserva.html">Reservas</a></li>
+                    <li><a href="multimidia.html">Multimídia</a></li>
+                    <li><a href="sobre.html">Sobre</a></li>
+                    <li><a href="contatos.html">Contato</a></li>
+                    <li><a href="https://www.skoob.com.br" target="_blank" rel="noopener noreferrer" class="link-externo">Skoob ↗</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container">
+
+        <section class="topo-jogos">
+            <h1>Espaço Lúdico: Jogos de Mesa, Cartas & Quebra-Cabeças</h1>
+            <p>
+                A ludoteca da Biblioteca Lilás reúne jogos selecionados para exercitar a memória, raciocínio lógico e momentos sociais entre amigos.
+                Adquira exemplares novos lacrados com preços especiais.
+            </p>
+        </section>
+
+        <section class="grid-livros">
+            <article class="livro-card">
+                <img src="imgs/xadrez.webp" alt="Jogo de Xadrez Clássico de Madeira">
+                <div class="livro-info">
+                    <span class="livro-tag">Estratégia & Raciocínio</span>
+                    <h3>Jogo de Xadrez Clássico de Madeira</h3>
+                    <p class="livro-autor"><strong>Tipo:</strong> Tabuleiro & Peças em Madeira</p>
+                    <p class="livro-preco">R$ 89,90</p>
+                    <p>Conjunto refinado de tabuleiro estojo dobrável em madeira nobre com peças maciças para estudo tático.</p>
+                </div>
+                <div class="livro-acoes">
+                    <button type="button" class="botao botao-carrinho" onclick="adicionarAoCarrinho(31)">🛒 Comprar</button>
+                    <button type="button" class="botao botao-reserva" onclick="abrirReserva(31)">📅 Reservar</button>
+                    <button type="button" class="botao botao-secundario" onclick="adicionarFavorito(31)" title="Salvar nos Favoritos">♡</button>
+                </div>
+            </article>
+
+            <article class="livro-card">
+                <img src="imgs/uno1.webp" alt="Jogo de Cartas UNO Clássico">
+                <div class="livro-info">
+                    <span class="livro-tag">Cartas Familiares</span>
+                    <h3>Jogo de Cartas UNO Clássico</h3>
+                    <p class="livro-autor"><strong>Fabricante:</strong> Mattel Games</p>
+                    <p class="livro-preco">R$ 24,90</p>
+                    <p>O clássico jogo de cartas da Mattel com 114 cartas personalizáveis para diversão entre 2 a 10 participantes.</p>
+                </div>
+                <div class="livro-acoes">
+                    <button type="button" class="botao botao-carrinho" onclick="adicionarAoCarrinho(32)">🛒 Comprar</button>
+                    <button type="button" class="botao botao-reserva" onclick="abrirReserva(32)">📅 Reservar</button>
+                    <button type="button" class="botao botao-secundario" onclick="adicionarFavorito(32)" title="Salvar nos Favoritos">♡</button>
+                </div>
+            </article>
+
+            <article class="livro-card">
+                <img src="imgs/uno2.webp" alt="UNO Show 'Em No Mercy">
+                <div class="livro-info">
+                    <span class="livro-tag">Cartas Competitivas</span>
+                    <h3>UNO Show 'Em No Mercy</h3>
+                    <p class="livro-autor"><strong>Fabricante:</strong> Mattel Games</p>
+                    <p class="livro-preco">R$ 34,90</p>
+                    <p>A versão extrema do Uno com regras impiedosas, penalidades pesadas como comprar 10 cartas e eliminação direta.</p>
+                </div>
+                <div class="livro-acoes">
+                    <button type="button" class="botao botao-carrinho" onclick="adicionarAoCarrinho(33)">🛒 Comprar</button>
+                    <button type="button" class="botao botao-reserva" onclick="abrirReserva(33)">📅 Reservar</button>
+                    <button type="button" class="botao botao-secundario" onclick="adicionarFavorito(33)" title="Salvar nos Favoritos">♡</button>
+                </div>
+            </article>
+
+            <article class="livro-card">
+                <img src="imgs/baralho1.webp" alt="Jogo de Baralho 168 na Lata Metalizada">
+                <div class="livro-info">
+                    <span class="livro-tag">Baralho Premium</span>
+                    <h3>Jogo de Baralho 168 na Lata Metalizada</h3>
+                    <p class="livro-autor"><strong>Marca:</strong> Art Game</p>
+                    <p class="livro-preco">R$ 32,90</p>
+                    <p>Dois baralhos completos de acabamento premium guardados em estojo metalizado para truco, poker e canastra.</p>
+                </div>
+                <div class="livro-acoes">
+                    <button type="button" class="botao botao-carrinho" onclick="adicionarAoCarrinho(34)">🛒 Comprar</button>
+                    <button type="button" class="botao botao-reserva" onclick="abrirReserva(34)">📅 Reservar</button>
+                    <button type="button" class="botao botao-secundario" onclick="adicionarFavorito(34)" title="Salvar nos Favoritos">♡</button>
+                </div>
+            </article>
+
+            <article class="livro-card">
+                <img src="imgs/baralho2.webp" alt="Baralho Copag 139 Tradicional (55 Cartas)">
+                <div class="livro-info">
+                    <span class="livro-tag">Baralho Clássico</span>
+                    <h3>Baralho Copag 139 Tradicional (55 Cartas)</h3>
+                    <p class="livro-autor"><strong>Marca:</strong> Copag</p>
+                    <p class="livro-preco">R$ 19,90</p>
+                    <p>O tradicional Ás dos Baralhos da Copag, fabricado desde 1908 com cartão especial e deslize profissional.</p>
+                </div>
+                <div class="livro-acoes">
+                    <button type="button" class="botao botao-carrinho" onclick="adicionarAoCarrinho(35)">🛒 Comprar</button>
+                    <button type="button" class="botao botao-reserva" onclick="abrirReserva(35)">📅 Reservar</button>
+                    <button type="button" class="botao botao-secundario" onclick="adicionarFavorito(35)" title="Salvar nos Favoritos">♡</button>
+                </div>
+            </article>
+
+            <article class="livro-card">
+                <img src="imgs/quebra-cabeca1.webp" alt="Quebra-Cabeça Nosferatu Horror (1000 Peças)">
+                <div class="livro-info">
+                    <span class="livro-tag">Quebra-Cabeça 1000 Peças</span>
+                    <h3>Quebra-Cabeça Nosferatu Horror (1000 Peças)</h3>
+                    <p class="livro-autor"><strong>Marca:</strong> Quokka Puzzles</p>
+                    <p class="livro-preco">R$ 69,90</p>
+                    <p>Desafio ilustrado de 1000 peças com tema de horror gótico contendo 147 segredos ocultos para desvendar.</p>
+                </div>
+                <div class="livro-acoes">
+                    <button type="button" class="botao botao-carrinho" onclick="adicionarAoCarrinho(36)">🛒 Comprar</button>
+                    <button type="button" class="botao botao-reserva" onclick="abrirReserva(36)">📅 Reservar</button>
+                    <button type="button" class="botao botao-secundario" onclick="adicionarFavorito(36)" title="Salvar nos Favoritos">♡</button>
+                </div>
+            </article>
+
+            <article class="livro-card">
+                <img src="imgs/quebra-cabeca2.webp" alt="Quebra-Cabeça A Noite Estrelada - Van Gogh">
+                <div class="livro-info">
+                    <span class="livro-tag">Quebra-Cabeça Nano 500 Peças</span>
+                    <h3>Quebra-Cabeça A Noite Estrelada - Van Gogh</h3>
+                    <p class="livro-autor"><strong>Marca:</strong> Game Office</p>
+                    <p class="livro-preco">R$ 49,90</p>
+                    <p>500 peças formato nano com textura de tela da obra-prima de Vincent van Gogh na Coleção Obras de Arte.</p>
+                </div>
+                <div class="livro-acoes">
+                    <button type="button" class="botao botao-carrinho" onclick="adicionarAoCarrinho(37)">🛒 Comprar</button>
+                    <button type="button" class="botao botao-reserva" onclick="abrirReserva(37)">📅 Reservar</button>
+                    <button type="button" class="botao botao-secundario" onclick="adicionarFavorito(37)" title="Salvar nos Favoritos">♡</button>
+                </div>
+            </article>
+
+            <article class="livro-card">
+                <img src="imgs/quebra-cabeca3.webp" alt="Quebra-Cabeça Jardins Suspensos da Babilônia">
+                <div class="livro-info">
+                    <span class="livro-tag">Quebra-Cabeça 5000 Peças</span>
+                    <h3>Quebra-Cabeça Jardins Suspensos da Babilônia</h3>
+                    <p class="livro-autor"><strong>Marca:</strong> Grow</p>
+                    <p class="livro-preco">R$ 139,90</p>
+                    <p>Grande quebra-cabeça panorâmico de 5000 peças da Grow retratando os lendários Jardins Suspensos da Babilônia.</p>
+                </div>
+                <div class="livro-acoes">
+                    <button type="button" class="botao botao-carrinho" onclick="adicionarAoCarrinho(38)">🛒 Comprar</button>
+                    <button type="button" class="botao botao-reserva" onclick="abrirReserva(38)">📅 Reservar</button>
+                    <button type="button" class="botao botao-secundario" onclick="adicionarFavorito(38)" title="Salvar nos Favoritos">♡</button>
+                </div>
+            </article>
+
+            <article class="livro-card">
+                <img src="imgs/quebra-cabeca4.webp" alt="Quebra-Cabeça Japão: Fujiyoshida (500 Peças)">
+                <div class="livro-info">
+                    <span class="livro-tag">Quebra-Cabeça 500 Peças</span>
+                    <h3>Quebra-Cabeça Japão: Fujiyoshida (500 Peças)</h3>
+                    <p class="livro-autor"><strong>Marca:</strong> Game Office</p>
+                    <p class="livro-preco">R$ 44,90</p>
+                    <p>Visão deslumbrante do Monte Fuji e do Pagode Chureito em Fujiyoshida em 500 peças de alta qualidade.</p>
+                </div>
+                <div class="livro-acoes">
+                    <button type="button" class="botao botao-carrinho" onclick="adicionarAoCarrinho(39)">🛒 Comprar</button>
+                    <button type="button" class="botao botao-reserva" onclick="abrirReserva(39)">📅 Reservar</button>
+                    <button type="button" class="botao botao-secundario" onclick="adicionarFavorito(39)" title="Salvar nos Favoritos">♡</button>
+                </div>
+            </article>
+
+            <article class="livro-card">
+                <img src="imgs/quebra-cabeca5.webp" alt="Quebra-Cabeça Moça com o Brinco de Pérola">
+                <div class="livro-info">
+                    <span class="livro-tag">Quebra-Cabeça Nano 500 Peças</span>
+                    <h3>Quebra-Cabeça Moça com o Brinco de Pérola</h3>
+                    <p class="livro-autor"><strong>Marca:</strong> Game Office</p>
+                    <p class="livro-preco">R$ 49,90</p>
+                    <p>A enigmática pintura de Johannes Vermeer reproduzida na linha Nano de 500 peças para colecionadores de arte.</p>
+                </div>
+                <div class="livro-acoes">
+                    <button type="button" class="botao botao-carrinho" onclick="adicionarAoCarrinho(40)">🛒 Comprar</button>
+                    <button type="button" class="botao botao-reserva" onclick="abrirReserva(40)">📅 Reservar</button>
+                    <button type="button" class="botao botao-secundario" onclick="adicionarFavorito(40)" title="Salvar nos Favoritos">♡</button>
+                </div>
+            </article>
+        </section>
+
+    </main>
+
+    <footer>
+        <div class="footer-conteudo">
+            <div class="footer-coluna">
+                <h3>Biblioteca Lilás</h3>
+                <p>
+                    Incentivando o gosto pela leitura, o raciocínio e a criatividade através
+                    de um acervo moderno, acessível e diversificado para toda a comunidade.
+                </p>
+            </div>
+
+            <div class="footer-coluna">
+                <h3>Navegação Rápida</h3>
+                <ul>
+                    <li><a href="index.html">Início</a></li>
+                    <li><a href="catalogo.html">Catálogo Completo</a></li>
+                    <li><a href="tabela.html">Tabela de Tarifas e Regras</a></li>                    <li><a href="favoritos.html">Meus Favoritos</a></li>
+                    <li><a href="carrinho.html">Meu Carrinho</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-coluna">
+                <h3>Departamentos</h3>
+                <ul>
+                    <li><a href="livros.html">Fantasia & Ficção</a></li>
+                    <li><a href="romance.html">Romance & Poesia</a></li>
+                    <li><a href="suspense.html">Suspense & Mistério</a></li>
+                    <li><a href="jogos.html">Jogos de Mesa & Cartas</a></li>
+                    <li><a href="multimidia.html">Espaço Multimídia</a></li>
+                    <li><a href="contatos.html">Fale Conosco</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-coluna">
+                <h3>Links e Redes</h3>
+                <ul>
+                    <li><a href="https://www.skoob.com.br" target="_blank" rel="noopener noreferrer">Perfil no Skoob</a></li>
+                    <li><a href="https://books.google.com.br" target="_blank" rel="noopener noreferrer">Google Livros</a></li>
+                    <li><a href="https://www.up.edu.br" target="_blank" rel="noopener noreferrer">Universidade Positivo</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="footer-copy">
+            <p>© 2026 Biblioteca Lilás. Projeto Front-End para Web - Universidade Positivo. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="js/scripts.js"></script>
+</body>
+</html>

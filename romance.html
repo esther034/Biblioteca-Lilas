@@ -1,0 +1,298 @@
+<!-- Projeto Front-End: Biblioteca Lilás - Universidade Positivo -->
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Romances & Poesias | Biblioteca Lilás</title>
+    <link rel="icon" href="imgs/icon.jfif">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .topo-romance {
+            background: linear-gradient(90deg, #faeaf8, #f4efff);
+            border-left: 5px solid #b549b0;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="topo-principal">
+            <div class="topo-container">
+                <a href="index.html" class="logo">
+                    <img src="imgs/icon.jfif" alt="Logo da Biblioteca Lilás">
+                    <div class="logo-texto">
+                        Biblioteca <span>Lilás</span>
+                        <small>Livraria & Espaço Cultural</small>
+                    </div>
+                </a>
+
+                <div class="topo-busca">
+                    <form action="catalogo.html" method="GET" class="form-busca-topo">
+                        <input type="text" name="busca" placeholder="O que você procura? (livro, autor, jogo...)" aria-label="Pesquisar">
+                        <button type="submit" aria-label="Buscar">🔍</button>
+                    </form>
+                </div>
+
+                <div class="topo-acoes">
+                    <a href="favoritos.html" class="acao-btn" title="Meus Favoritos">
+                        <span class="icone-acao">♡</span>
+                        <span class="texto-acao">Favoritos</span>
+                        <span id="contadorFavoritos" class="badge-contador">0</span>
+                    </a>
+                    <a href="carrinho.html" class="acao-btn acao-carrinho" title="Meu Carrinho">
+                        <span class="icone-acao">🛒</span>
+                        <span class="texto-acao">Carrinho</span>
+                        <span id="contadorCarrinho" class="badge-contador badge-carrinho">0</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <nav class="barra-navegacao">
+            <div class="nav-container">
+                <ul id="menu">
+                    <li><a href="index.html">Início</a></li>
+                    <li><a href="catalogo.html">Catálogo Completo</a></li>
+                    <li><a href="livros.html">Fantasia</a></li>
+                    <li><a href="romance.html" class="ativo">Romance</a></li>
+                    <li><a href="suspense.html">Suspense</a></li>
+                    <li><a href="jogos.html">Jogos</a></li>
+                    <li><a href="tabela.html">Prazos & Tarifas</a></li>
+                    <li><a href="reserva.html">Reservas</a></li>
+                    <li><a href="multimidia.html">Multimídia</a></li>
+                    <li><a href="sobre.html">Sobre</a></li>
+                    <li><a href="contatos.html">Contato</a></li>
+                    <li><a href="https://www.skoob.com.br" target="_blank" rel="noopener noreferrer" class="link-externo">Skoob ↗</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container">
+
+        <section class="topo-romance">
+            <h1>Coleção de Romances, Dramas & Poesias</h1>
+            <p>
+                Amores arrebatadores, reencontros emocionantes e crônicas do coração.
+                Títulos nacionais e internacionais com preços imperdíveis e estoque a pronta entrega.
+            </p>
+        </section>
+
+        <section class="grid-livros">
+            <article class="livro-card">
+                <img src="imgs/livro_romance1.webp" alt="Livro Como Terminar uma História de Amor">
+                <div class="livro-info">
+                    <span class="livro-tag">Romance Contemporâneo</span>
+                    <h3>Como Terminar uma História de Amor</h3>
+                    <p class="livro-autor"><strong>Autora:</strong> Yulin Kuang</p>
+                    <p class="livro-preco">R$ 39,90</p>
+                    <p>Helen e Grant precisam trabalhar juntos como roteiristas em Hollywood anos após um passado que marcou suas vidas.</p>
+                </div>
+                <div class="livro-acoes">
+                    <button type="button" class="botao botao-carrinho" onclick="adicionarAoCarrinho(11)">🛒 Comprar</button>
+                    <button type="button" class="botao botao-reserva" onclick="abrirReserva(11)">📅 Reservar</button>
+                    <button type="button" class="botao botao-secundario" onclick="adicionarFavorito(11)" title="Salvar nos Favoritos">♡</button>
+                </div>
+            </article>
+
+            <article class="livro-card">
+                <img src="imgs/livro_romance2.webp" alt="Livro O Último Restaurante de Paris">
+                <div class="livro-info">
+                    <span class="livro-tag">Romance Histórico</span>
+                    <h3>O Último Restaurante de Paris</h3>
+                    <p class="livro-autor"><strong>Autora:</strong> Lily Graham</p>
+                    <p class="livro-preco">R$ 42,90</p>
+                    <p>Marianne herda um restaurante parisiense e descobre cartas secretas dos anos de ocupação da Segunda Guerra.</p>
+                </div>
+                <div class="livro-acoes">
+                    <button type="button" class="botao botao-carrinho" onclick="adicionarAoCarrinho(12)">🛒 Comprar</button>
+                    <button type="button" class="botao botao-reserva" onclick="abrirReserva(12)">📅 Reservar</button>
+                    <button type="button" class="botao botao-secundario" onclick="adicionarFavorito(12)" title="Salvar nos Favoritos">♡</button>
+                </div>
+            </article>
+
+            <article class="livro-card">
+                <img src="imgs/livro_romance3.webp" alt="Livro A Voz do Coração">
+                <div class="livro-info">
+                    <span class="livro-tag">Romance & Drama</span>
+                    <h3>A Voz do Coração</h3>
+                    <p class="livro-autor"><strong>Autora:</strong> Julia Whelan</p>
+                    <p class="livro-preco">R$ 44,90</p>
+                    <p>Sewanee narra audiolivros de grande sucesso e grava uma parceria especial que desperta sentimentos esquecidos.</p>
+                </div>
+                <div class="livro-acoes">
+                    <button type="button" class="botao botao-carrinho" onclick="adicionarAoCarrinho(13)">🛒 Comprar</button>
+                    <button type="button" class="botao botao-reserva" onclick="abrirReserva(13)">📅 Reservar</button>
+                    <button type="button" class="botao botao-secundario" onclick="adicionarFavorito(13)" title="Salvar nos Favoritos">♡</button>
+                </div>
+            </article>
+
+            <article class="livro-card">
+                <img src="imgs/livro_romance4.webp" alt="Livro Cartas de Amor de Paris">
+                <div class="livro-info">
+                    <span class="livro-tag">Romance Francês</span>
+                    <h3>Cartas de Amor de Paris</h3>
+                    <p class="livro-autor"><strong>Autor:</strong> Nicolas Barreau</p>
+                    <p class="livro-preco">R$ 37,90</p>
+                    <p>Um livreiro viúvo escreve cartas comoventes para a falecida esposa e misteriosamente passa a receber respostas.</p>
+                </div>
+                <div class="livro-acoes">
+                    <button type="button" class="botao botao-carrinho" onclick="adicionarAoCarrinho(14)">🛒 Comprar</button>
+                    <button type="button" class="botao botao-reserva" onclick="abrirReserva(14)">📅 Reservar</button>
+                    <button type="button" class="botao botao-secundario" onclick="adicionarFavorito(14)" title="Salvar nos Favoritos">♡</button>
+                </div>
+            </article>
+
+            <article class="livro-card">
+                <img src="imgs/livro_romance5.webp" alt="Livro Não É Como nos Filmes">
+                <div class="livro-info">
+                    <span class="livro-tag">Comédia Romântica</span>
+                    <h3>Não É Como nos Filmes</h3>
+                    <p class="livro-autor"><strong>Autora:</strong> Lynn Painter</p>
+                    <p class="livro-preco">R$ 45,90</p>
+                    <p>A sequência apaixonante de 'Melhor do que nos Filmes' repleta de encontros, reencontros e reviravoltas cômicas.</p>
+                </div>
+                <div class="livro-acoes">
+                    <button type="button" class="botao botao-carrinho" onclick="adicionarAoCarrinho(15)">🛒 Comprar</button>
+                    <button type="button" class="botao botao-reserva" onclick="abrirReserva(15)">📅 Reservar</button>
+                    <button type="button" class="botao botao-secundario" onclick="adicionarFavorito(15)" title="Salvar nos Favoritos">♡</button>
+                </div>
+            </article>
+
+            <article class="livro-card">
+                <img src="imgs/livro_romance6.webp" alt="Livro Cruzeiro do Amor">
+                <div class="livro-info">
+                    <span class="livro-tag">Romance Jovem</span>
+                    <h3>Cruzeiro do Amor</h3>
+                    <p class="livro-autor"><strong>Autor:</strong> Vinicius Grossos</p>
+                    <p class="livro-preco">R$ 36,90</p>
+                    <p>Uma viagem de navio em alto mar repleta de risadas, amizades sinceras e sentimentos inesperados de verão.</p>
+                </div>
+                <div class="livro-acoes">
+                    <button type="button" class="botao botao-carrinho" onclick="adicionarAoCarrinho(16)">🛒 Comprar</button>
+                    <button type="button" class="botao botao-reserva" onclick="abrirReserva(16)">📅 Reservar</button>
+                    <button type="button" class="botao botao-secundario" onclick="adicionarFavorito(16)" title="Salvar nos Favoritos">♡</button>
+                </div>
+            </article>
+
+            <article class="livro-card">
+                <img src="imgs/livro_romance7.webp" alt="Livro Como É para Você?">
+                <div class="livro-info">
+                    <span class="livro-tag">Drama Emocionante</span>
+                    <h3>Como É para Você?</h3>
+                    <p class="livro-autor"><strong>Autora:</strong> Sophie Kinsella</p>
+                    <p class="livro-preco">R$ 41,90</p>
+                    <p>Uma narrativa comovente e corajosa da consagrada autora britânica sobre recomeçar e valorizar os afetos.</p>
+                </div>
+                <div class="livro-acoes">
+                    <button type="button" class="botao botao-carrinho" onclick="adicionarAoCarrinho(17)">🛒 Comprar</button>
+                    <button type="button" class="botao botao-reserva" onclick="abrirReserva(17)">📅 Reservar</button>
+                    <button type="button" class="botao botao-secundario" onclick="adicionarFavorito(17)" title="Salvar nos Favoritos">♡</button>
+                </div>
+            </article>
+
+            <article class="livro-card">
+                <img src="imgs/livro_romance8.webp" alt="Livro Amor, Teoricamente">
+                <div class="livro-info">
+                    <span class="livro-tag">Romance Acadêmico</span>
+                    <h3>Amor, Teoricamente</h3>
+                    <p class="livro-autor"><strong>Autora:</strong> Ali Hazelwood</p>
+                    <p class="livro-preco">R$ 48,90</p>
+                    <p>Elsie é física teórica e namorada profissional de aluguel até cruzar caminho com o arrogante Jack Smith.</p>
+                </div>
+                <div class="livro-acoes">
+                    <button type="button" class="botao botao-carrinho" onclick="adicionarAoCarrinho(18)">🛒 Comprar</button>
+                    <button type="button" class="botao botao-reserva" onclick="abrirReserva(18)">📅 Reservar</button>
+                    <button type="button" class="botao botao-secundario" onclick="adicionarFavorito(18)" title="Salvar nos Favoritos">♡</button>
+                </div>
+            </article>
+
+            <article class="livro-card">
+                <img src="imgs/livro_romance9.webp" alt="Livro A Escolha Perfeita">
+                <div class="livro-info">
+                    <span class="livro-tag">Romance Apaixonante</span>
+                    <h3>A Escolha Perfeita</h3>
+                    <p class="livro-autor"><strong>Autora:</strong> Tia Williams</p>
+                    <p class="livro-preco">R$ 38,90</p>
+                    <p>Uma bem-sucedida editora de moda vive um caso proibido com o filho de sua maior concorrente em Nova York.</p>
+                </div>
+                <div class="livro-acoes">
+                    <button type="button" class="botao botao-carrinho" onclick="adicionarAoCarrinho(19)">🛒 Comprar</button>
+                    <button type="button" class="botao botao-reserva" onclick="abrirReserva(19)">📅 Reservar</button>
+                    <button type="button" class="botao botao-secundario" onclick="adicionarFavorito(19)" title="Salvar nos Favoritos">♡</button>
+                </div>
+            </article>
+
+            <article class="livro-card">
+                <img src="imgs/livro_romance10.webp" alt="Livro A Hipótese do Amor">
+                <div class="livro-info">
+                    <span class="livro-tag">Comédia Romântica</span>
+                    <h3>A Hipótese do Amor</h3>
+                    <p class="livro-autor"><strong>Autora:</strong> Ali Hazelwood</p>
+                    <p class="livro-preco">R$ 46,90</p>
+                    <p>Olive beija um desconhecido no laboratório para fingir um romance, sem saber que se trata do temido Dr. Adam Carlsen.</p>
+                </div>
+                <div class="livro-acoes">
+                    <button type="button" class="botao botao-carrinho" onclick="adicionarAoCarrinho(20)">🛒 Comprar</button>
+                    <button type="button" class="botao botao-reserva" onclick="abrirReserva(20)">📅 Reservar</button>
+                    <button type="button" class="botao botao-secundario" onclick="adicionarFavorito(20)" title="Salvar nos Favoritos">♡</button>
+                </div>
+            </article>
+        </section>
+
+    </main>
+
+    <footer>
+        <div class="footer-conteudo">
+            <div class="footer-coluna">
+                <h3>Biblioteca Lilás</h3>
+                <p>
+                    Incentivando o gosto pela leitura, o raciocínio e a criatividade através
+                    de um acervo moderno, acessível e diversificado para toda a comunidade.
+                </p>
+            </div>
+
+            <div class="footer-coluna">
+                <h3>Navegação Rápida</h3>
+                <ul>
+                    <li><a href="index.html">Início</a></li>
+                    <li><a href="catalogo.html">Catálogo Completo</a></li>
+                    <li><a href="tabela.html">Tabela de Tarifas e Regras</a></li>                    <li><a href="favoritos.html">Meus Favoritos</a></li>
+                    <li><a href="carrinho.html">Meu Carrinho</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-coluna">
+                <h3>Departamentos</h3>
+                <ul>
+                    <li><a href="livros.html">Fantasia & Ficção</a></li>
+                    <li><a href="romance.html">Romance & Poesia</a></li>
+                    <li><a href="suspense.html">Suspense & Mistério</a></li>
+                    <li><a href="jogos.html">Jogos de Mesa & Cartas</a></li>
+                    <li><a href="multimidia.html">Espaço Multimídia</a></li>
+                    <li><a href="contatos.html">Fale Conosco</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-coluna">
+                <h3>Links e Redes</h3>
+                <ul>
+                    <li><a href="https://www.skoob.com.br" target="_blank" rel="noopener noreferrer">Perfil no Skoob</a></li>
+                    <li><a href="https://books.google.com.br" target="_blank" rel="noopener noreferrer">Google Livros</a></li>
+                    <li><a href="https://www.up.edu.br" target="_blank" rel="noopener noreferrer">Universidade Positivo</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="footer-copy">
+            <p>© 2026 Biblioteca Lilás. Projeto Front-End para Web - Universidade Positivo. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="js/scripts.js"></script>
+</body>
+</html>

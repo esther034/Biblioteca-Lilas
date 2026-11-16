@@ -1,0 +1,219 @@
+<!-- Projeto Front-End: Biblioteca Lilás - Universidade Positivo -->
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Espaço Multimídia | Biblioteca Lilás</title>
+    <link rel="icon" href="imgs/icon.jfif">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .topo-multimidia {
+            background-color: #ede3fc;
+            border-left: 5px solid #7b42c9;
+            padding: 22px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+        }
+        .bloco-destaque-midia {
+            background-color: #ffffff;
+            border: 1px solid #ebdffb;
+            border-radius: 12px;
+            padding: 24px;
+            margin-bottom: 35px;
+            box-shadow: 0 3px 10px rgba(75, 36, 132, 0.05);
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="topo-principal">
+            <div class="topo-container">
+                <a href="index.html" class="logo">
+                    <img src="imgs/icon.jfif" alt="Logo da Biblioteca Lilás">
+                    <div class="logo-texto">
+                        Biblioteca <span>Lilás</span>
+                        <small>Livraria & Espaço Cultural</small>
+                    </div>
+                </a>
+
+                <div class="topo-busca">
+                    <form action="catalogo.html" method="GET" class="form-busca-topo">
+                        <input type="text" name="busca" placeholder="O que você procura? (livro, autor, jogo...)" aria-label="Pesquisar">
+                        <button type="submit" aria-label="Buscar">🔍</button>
+                    </form>
+                </div>
+
+                <div class="topo-acoes">
+                    <a href="favoritos.html" class="acao-btn" title="Meus Favoritos">
+                        <span class="icone-acao">♡</span>
+                        <span class="texto-acao">Favoritos</span>
+                        <span id="contadorFavoritos" class="badge-contador">0</span>
+                    </a>
+                    <a href="carrinho.html" class="acao-btn acao-carrinho" title="Meu Carrinho">
+                        <span class="icone-acao">🛒</span>
+                        <span class="texto-acao">Carrinho</span>
+                        <span id="contadorCarrinho" class="badge-contador badge-carrinho">0</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <nav class="barra-navegacao">
+            <div class="nav-container">
+                <ul id="menu">
+                    <li><a href="index.html">Início</a></li>
+                    <li><a href="catalogo.html">Catálogo Completo</a></li>
+                    <li><a href="livros.html">Fantasia</a></li>
+                    <li><a href="romance.html">Romance</a></li>
+                    <li><a href="suspense.html">Suspense</a></li>
+                    <li><a href="jogos.html">Jogos</a></li>
+                    <li><a href="tabela.html">Prazos & Tarifas</a></li>
+                    <li><a href="reserva.html">Reservas</a></li>
+                    <li><a href="multimidia.html" class="ativo">Multimídia</a></li>
+                    <li><a href="sobre.html">Sobre</a></li>
+                    <li><a href="contatos.html">Contato</a></li>
+                    <li><a href="https://www.skoob.com.br" target="_blank" rel="noopener noreferrer" class="link-externo">Skoob ↗</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container">
+
+        <section class="topo-multimidia">
+            <h1>Espaço Multimídia: Vídeo & Áudio</h1>
+            <p>
+                Explore produções audiovisuais exclusivas da Biblioteca Lilás. Assista ao vídeo animado narrando a trama
+                do livro <em>O Príncipe Cruel</em> e ouça a trilha sonora e apresentação oficial do nosso espaço cultural.
+            </p>
+        </section>
+
+        <section class="multimidia-grid">
+
+            <article class="livro-card">
+                <div class="multimidia-player-container">
+                    <video controls poster="imgs/livro1.jpg" preload="metadata">
+                        <source src="video/quero_um_vídeo_com_personagens_contando_a_história_do_primeiro_livro_de_principe_cruel_só_que_a_hist_11-12 18-31-50.mp4" type="video/mp4">
+                        Seu navegador não suporta a reprodução de vídeo em HTML5.
+                    </video>
+                </div>
+                <div class="livro-info">
+                    <span class="livro-tag">Vídeo & Animação</span>
+                    <h3>O Príncipe Cruel (História em Vídeo)</h3>
+                    <p class="livro-autor"><strong>Autor:</strong> Holly Black | Adaptação Visual</p>
+                    <p class="livro-preco">R$ 49,90 <small style="font-size: 12px; font-weight: normal; color: #62507d;">(Exemplar Físico)</small></p>
+                    <p>Acompanhe personagens animados recontando a emocionante história do primeiro livro da saga <em>O Príncipe Cruel</em>, revelando as intrigas, perigos e segredos da corte das fadas de Elfhame.</p>
+                </div>
+                <div class="livro-acoes">
+                    <button type="button" class="botao botao-carrinho" onclick="adicionarAoCarrinho(1)">🛒 Comprar</button>
+                    <button type="button" class="botao botao-reserva" onclick="abrirReserva(1)">📅 Reservar</button>
+                    <button type="button" class="botao botao-secundario" onclick="adicionarFavorito(1)" title="Salvar nos Favoritos">♡</button>
+                </div>
+            </article>
+
+            <article class="livro-card">
+                <div class="multimidia-player-container">
+                    <div style="font-size: 46px; margin-bottom: 8px; color: #7743c7;">🎧</div>
+                    <p style="font-size: 13px; font-weight: bold; color: #3d1b6e; margin-bottom: 12px;">Biblioteca Lilás - Trilha Oficial (MP3)</p>
+                    <audio controls style="width: 100%;">
+                        <source src="audio/Biblioteca_Lilás.mp3" type="audio/mpeg">
+                        Seu navegador não suporta a reprodução de áudio em HTML5.
+                    </audio>
+                </div>
+                <div class="livro-info">
+                    <span class="livro-tag">Áudio & Ambientação</span>
+                    <h3>Trilha Sonora Oficial da Biblioteca Lilás</h3>
+                    <p class="livro-autor"><strong>Produção:</strong> Acervo Lilás Soundscape & Estudos</p>
+                    <p class="livro-preco" style="color: #6b3bb8;">Acesso Gratuito <small style="font-size: 12px; font-weight: normal; color: #62507d;">(Streaming)</small></p>
+                    <p>Ouça a faixa sonora oficial da Biblioteca Lilás, gravada especialmente para acolher nossos leitores, relaxar e criar um ambiente inspirador para leitura, reflexão e estudos.</p>
+                </div>
+                <div class="livro-acoes">
+                    <a href="sobre.html" class="botao botao-carrinho" style="text-align: center; text-decoration: none;">🏛 Espaço</a>
+                    <a href="catalogo.html" class="botao botao-reserva" style="text-align: center; text-decoration: none;">📚 Acervo Geral</a>
+                    <button type="button" class="botao botao-secundario" onclick="salvarAudioFavorito()" title="Salvar Trilha nos Favoritos">♡</button>
+                </div>
+            </article>
+
+        </section>
+
+        <section class="secao-info-dupla">
+            <article class="bloco-info">
+                <h3>Cabines Acústicas & Audiovisual</h3>
+                <p>
+                    A sede física da Biblioteca Lilás oferece cabines acústicas individuais equipadas com fones de alta fidelidade
+                    e telas para visualização de videoaulas, documentários literários e audiolivros do nosso acervo.
+                </p>
+            </article>
+
+            <article class="bloco-info">
+                <h3>Acesso Gratuito para a Comunidade</h3>
+                <p>
+                    O acesso aos materiais e equipamentos multimídia é 100% gratuito para todos os estudantes da Universidade Positivo
+                    e associados cadastrados. Solicite materiais complementares ou agende um horário no nosso balcão.
+                </p>
+            </article>
+        </section>
+
+        <section style="text-align: center; margin: 20px 0 40px 0;">
+            <p style="margin-bottom: 15px; color: #5a417e;">Quer consultar regras de empréstimo gratuito para alunos da UP?</p>
+            <a href="tabela.html" class="botao">Consultar Prazos e Tarifas</a>
+        </section>
+
+    </main>
+
+    <footer>
+        <div class="footer-conteudo">
+            <div class="footer-coluna">
+                <h3>Biblioteca Lilás</h3>
+                <p>
+                    Incentivando o gosto pela leitura, o raciocínio e a criatividade através
+                    de um acervo moderno, acessível e diversificado para toda a comunidade.
+                </p>
+            </div>
+
+            <div class="footer-coluna">
+                <h3>Navegação Rápida</h3>
+                <ul>
+                    <li><a href="index.html">Início</a></li>
+                    <li><a href="catalogo.html">Catálogo Completo</a></li>
+                    <li><a href="tabela.html">Tabela de Tarifas e Regras</a></li>
+                    <li><a href="reserva.html">Reservas Online</a></li>
+                    <li><a href="multimidia.html">Espaço Multimídia</a></li>
+                    <li><a href="favoritos.html">Meus Favoritos</a></li>
+                    <li><a href="carrinho.html">Meu Carrinho</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-coluna">
+                <h3>Departamentos</h3>
+                <ul>
+                    <li><a href="livros.html">Fantasia & Ficção</a></li>
+                    <li><a href="romance.html">Romance & Poesia</a></li>
+                    <li><a href="suspense.html">Suspense & Mistério</a></li>
+                    <li><a href="jogos.html">Jogos de Mesa & Cartas</a></li>
+                    <li><a href="multimidia.html">Espaço Multimídia</a></li>
+                    <li><a href="contatos.html">Fale Conosco</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-coluna">
+                <h3>Links e Redes</h3>
+                <ul>
+                    <li><a href="https://www.skoob.com.br" target="_blank" rel="noopener noreferrer">Perfil no Skoob</a></li>
+                    <li><a href="https://books.google.com.br" target="_blank" rel="noopener noreferrer">Google Livros</a></li>
+                    <li><a href="https://www.up.edu.br" target="_blank" rel="noopener noreferrer">Universidade Positivo</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="footer-copy">
+            <p>© 2026 Biblioteca Lilás. Projeto Front-End para Web - Universidade Positivo. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="js/scripts.js"></script>
+</body>
+</html>
+

@@ -1,0 +1,186 @@
+<!-- Projeto Front-End: Biblioteca Lilás - Universidade Positivo -->
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meu Carrinho de Compras | Biblioteca Lilás</title>
+    <link rel="icon" href="imgs/icon.jfif">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .topo-carrinho {
+            background-color: #ffffff;
+            border-left: 5px solid #218838;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="topo-principal">
+            <div class="topo-container">
+                <a href="index.html" class="logo">
+                    <img src="imgs/icon.jfif" alt="Logo da Biblioteca Lilás">
+                    <div class="logo-texto">
+                        Biblioteca <span>Lilás</span>
+                        <small>Livraria & Espaço Cultural</small>
+                    </div>
+                </a>
+
+                <div class="topo-busca">
+                    <form action="catalogo.html" method="GET" class="form-busca-topo">
+                        <input type="text" name="busca" placeholder="O que você procura? (livro, autor, jogo...)" aria-label="Pesquisar">
+                        <button type="submit" aria-label="Buscar">🔍</button>
+                    </form>
+                </div>
+
+                <div class="topo-acoes">
+                    <a href="favoritos.html" class="acao-btn" title="Meus Favoritos">
+                        <span class="icone-acao">♡</span>
+                        <span class="texto-acao">Favoritos</span>
+                        <span id="contadorFavoritos" class="badge-contador">0</span>
+                    </a>
+                    <a href="carrinho.html" class="acao-btn acao-carrinho" title="Meu Carrinho">
+                        <span class="icone-acao">🛒</span>
+                        <span class="texto-acao">Carrinho</span>
+                        <span id="contadorCarrinho" class="badge-contador badge-carrinho">0</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <nav class="barra-navegacao">
+            <div class="nav-container">
+                <ul id="menu">
+                    <li><a href="index.html">Início</a></li>
+                    <li><a href="catalogo.html">Catálogo Completo</a></li>
+                    <li><a href="livros.html">Fantasia</a></li>
+                    <li><a href="romance.html">Romance</a></li>
+                    <li><a href="suspense.html">Suspense</a></li>
+                    <li><a href="jogos.html">Jogos</a></li>
+                    <li><a href="tabela.html">Prazos & Tarifas</a></li>
+                    <li><a href="reserva.html">Reservas</a></li>
+                    <li><a href="multimidia.html">Multimídia</a></li>
+                    <li><a href="sobre.html">Sobre</a></li>
+                    <li><a href="contatos.html">Contato</a></li>
+                    <li><a href="https://www.skoob.com.br" target="_blank" rel="noopener noreferrer" class="link-externo">Skoob ↗</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container">
+
+        <section class="topo-carrinho">
+            <h1>Meu Carrinho de Compras</h1>
+            <p>Confira as obras e jogos selecionados, aumente ou diminua as quantidades e acompanhe o valor total somado em tempo real.</p>
+        </section>
+
+        <div id="carrinhoVazio" class="bloco-info" style="text-align: center; display: none;">
+            <span style="font-size: 50px; display: block; margin-bottom: 12px;">🛒</span>
+            <h2>Seu carrinho está vazio no momento!</h2>
+            <p style="margin-bottom: 22px;">Explore nosso catálogo ou seções temáticas e clique em "🛒 Comprar" para adicionar livros e jogos ao seu carrinho.</p>
+            <a href="catalogo.html" class="botao">Ver Catálogo de Livros e Jogos</a>
+        </div>
+
+        <section class="carrinho-layout" id="carrinhoConteudo">
+            <div class="carrinho-tabela-bloco">
+                <table class="tabela-dados">
+                    <thead>
+                        <tr>
+                            <th scope="col">Produto</th>
+                            <th scope="col">Preço Unit.</th>
+                            <th scope="col">Qtd.</th>
+                            <th scope="col">Subtotal</th>
+                            <th scope="col">Excluir</th>
+                        </tr>
+                    </thead>
+                    <tbody id="itensCarrinhoTabela">
+                    </tbody>
+                </table>
+                <div style="padding: 16px; display: flex; justify-content: space-between; background-color: #faf7fe; border-top: 1px solid #ebdffb;">
+                    <a href="catalogo.html" class="botao botao-secundario">← Continuar Comprando</a>
+                    <button type="button" class="botao botao-remover" onclick="limparCarrinho()">Esvaziar Carrinho</button>
+                </div>
+            </div>
+
+            <div class="carrinho-resumo-bloco">
+                <h2>Resumo do Pedido</h2>
+                <div class="resumo-linha">
+                    <span>Subtotal dos Itens:</span>
+                    <strong id="resumoSubtotal">R$ 0,00</strong>
+                </div>
+                <div class="resumo-linha">
+                    <span>Frete / Envio:</span>
+                    <span style="color: #218838; font-weight: bold;">Grátis (Balcão ou Curitiba)</span>
+                </div>
+                <div class="resumo-linha total">
+                    <span>Total a Pagar:</span>
+                    <span id="resumoTotalFinal">R$ 0,00</span>
+                </div>
+                <div style="margin-top: 25px;">
+                    <button type="button" class="botao botao-carrinho" onclick="finalizarCompra()" style="width: 100%; font-size: 16px; padding: 14px;">
+                        ✓ Finalizar Compra
+                    </button>
+                </div>
+                <div style="margin-top: 20px; font-size: 12px; color: #72608c; text-align: center;">
+                    🔒 Compra segura simulada para fins acadêmicos. Dados salvos localmente via LocalStorage.
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <div class="footer-conteudo">
+            <div class="footer-coluna">
+                <h3>Biblioteca Lilás</h3>
+                <p>
+                    Incentivando o gosto pela leitura, o raciocínio e a criatividade através
+                    de um acervo moderno, acessível e diversificado para toda a comunidade.
+                </p>
+            </div>
+
+            <div class="footer-coluna">
+                <h3>Navegação Rápida</h3>
+                <ul>
+                    <li><a href="index.html">Início</a></li>
+                    <li><a href="catalogo.html">Catálogo Completo</a></li>
+                    <li><a href="tabela.html">Tabela de Tarifas e Regras</a></li>                    <li><a href="favoritos.html">Meus Favoritos</a></li>
+                    <li><a href="carrinho.html">Meu Carrinho</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-coluna">
+                <h3>Departamentos</h3>
+                <ul>
+                    <li><a href="livros.html">Fantasia & Ficção</a></li>
+                    <li><a href="romance.html">Romance & Poesia</a></li>
+                    <li><a href="suspense.html">Suspense & Mistério</a></li>
+                    <li><a href="jogos.html">Jogos de Mesa & Cartas</a></li>
+                    <li><a href="multimidia.html">Espaço Multimídia</a></li>
+                    <li><a href="contatos.html">Fale Conosco</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-coluna">
+                <h3>Links e Redes</h3>
+                <ul>
+                    <li><a href="https://www.skoob.com.br" target="_blank" rel="noopener noreferrer">Perfil no Skoob</a></li>
+                    <li><a href="https://books.google.com.br" target="_blank" rel="noopener noreferrer">Google Livros</a></li>
+                    <li><a href="https://www.up.edu.br" target="_blank" rel="noopener noreferrer">Universidade Positivo</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="footer-copy">
+            <p>© 2026 Biblioteca Lilás. Projeto Front-End para Web - Universidade Positivo. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="js/scripts.js"></script>
+</body>
+</html>

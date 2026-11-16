@@ -1,0 +1,266 @@
+<!-- Projeto Front-End: Biblioteca Lilás - Universidade Positivo -->
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reserva de Livros & Empréstimos | Biblioteca Lilás</title>
+    <link rel="icon" href="imgs/icon.jfif">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .topo-reserva {
+            background-color: #ede3fc;
+            border-left: 5px solid #7b42c9;
+            padding: 22px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+        }
+        .bloco-regras-reserva {
+            background-color: #ffffff;
+            border: 1px solid #ebdffb;
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 25px;
+            box-shadow: 0 2px 8px rgba(75, 36, 132, 0.05);
+        }
+        .card-reserva-item {
+            background-color: #ffffff;
+            border: 1px solid #ebdffb;
+            border-radius: 12px;
+            padding: 16px;
+            margin-bottom: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 15px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="topo-principal">
+            <div class="topo-container">
+                <a href="index.html" class="logo">
+                    <img src="imgs/icon.jfif" alt="Logo da Biblioteca Lilás">
+                    <div class="logo-texto">
+                        Biblioteca <span>Lilás</span>
+                        <small>Livraria & Espaço Cultural</small>
+                    </div>
+                </a>
+
+                <div class="topo-busca">
+                    <form action="catalogo.html" method="GET" class="form-busca-topo">
+                        <input type="text" name="busca" placeholder="O que você procura? (livro, autor, jogo...)" aria-label="Pesquisar">
+                        <button type="submit" aria-label="Buscar">🔍</button>
+                    </form>
+                </div>
+
+                <div class="topo-acoes">
+                    <a href="favoritos.html" class="acao-btn" title="Meus Favoritos">
+                        <span class="icone-acao">♡</span>
+                        <span class="texto-acao">Favoritos</span>
+                        <span id="contadorFavoritos" class="badge-contador">0</span>
+                    </a>
+                    <a href="carrinho.html" class="acao-btn acao-carrinho" title="Meu Carrinho">
+                        <span class="icone-acao">🛒</span>
+                        <span class="texto-acao">Carrinho</span>
+                        <span id="contadorCarrinho" class="badge-contador badge-carrinho">0</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <nav class="barra-navegacao">
+            <div class="nav-container">
+                <ul id="menu">
+                    <li><a href="index.html">Início</a></li>
+                    <li><a href="catalogo.html">Catálogo Completo</a></li>
+                    <li><a href="livros.html">Fantasia</a></li>
+                    <li><a href="romance.html">Romance</a></li>
+                    <li><a href="suspense.html">Suspense</a></li>
+                    <li><a href="jogos.html">Jogos</a></li>
+                    <li><a href="tabela.html">Prazos & Tarifas</a></li>
+                    <li><a href="reserva.html" class="ativo">Reservas</a></li>
+                    <li><a href="multimidia.html">Multimídia</a></li>
+                    <li><a href="sobre.html">Sobre</a></li>
+                    <li><a href="contatos.html">Contato</a></li>
+                    <li><a href="https://www.skoob.com.br" target="_blank" rel="noopener noreferrer" class="link-externo">Skoob ↗</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container">
+
+        <section class="topo-reserva">
+            <h1>Central de Reservas para Empréstimo Estudantil</h1>
+            <p>
+                Alunos, professores e associados da Universidade Positivo podem reservar qualquer exemplar do acervo
+                gratuitamente para retirada presencial no balcão de atendimento da Biblioteca Lilás.
+            </p>
+        </section>
+
+        <section class="bloco-regras-reserva">
+            <h2 style="font-size: 17px; color: #3b1d6b; margin-bottom: 8px;">Como Funciona o Sistema de Reserva e Empréstimo?</h2>
+            <ul style="margin-left: 20px; font-size: 14px; color: #513e6d; line-height: 1.7;">
+                <li><strong>Empréstimo Gratuito:</strong> Livros de Fantasia e Romance podem ser emprestados por até <strong>14 dias</strong> (com até 2 renovações).</li>
+                <li><strong>Suspenses & Lançamentos:</strong> Prazo de devolução de <strong>7 dias</strong> corridos.</li>
+                <li><strong>Jogos de Mesa & Tabuleiro:</strong> Empréstimo de <strong>3 a 5 dias</strong> para atividades lúdicas e estudos.</li>
+                <li><strong>Retirada:</strong> Após confirmar a reserva online, o exemplar fica guardado em seu nome no balcão por até <strong>48 horas</strong>.</li>
+                <li><strong>Avisos de Prazos:</strong> Enviamos a confirmação da reserva e lembretes de devolução diretamente no seu E-mail e Celular/WhatsApp cadastrados.</li>
+            </ul>
+        </section>
+
+        <section class="formulario-container">
+            <div id="statusReserva" class="alerta" style="display: none;"></div>
+
+            <form id="formReserva">
+                <h2 style="font-size: 20px; color: #381b69; margin-bottom: 20px; text-align: center;">Formulário de Solicitação de Reserva</h2>
+
+                <div class="form-grupo">
+                    <label for="reservaLivroSelect">Obra a ser Reservada *</label>
+                    <select id="reservaLivroSelect" name="reservaLivroSelect" class="form-campo" required>
+                        <option value="">Carregando acervo de obras...</option>
+                    </select>
+                </div>
+
+                <div class="form-grupo">
+                    <label for="reservaNome">Nome Completo do Solicitante *</label>
+                    <input 
+                        type="text" 
+                        id="reservaNome" 
+                        name="reservaNome" 
+                        class="form-campo" 
+                        placeholder="Ex: Mariana Silva Souza" 
+                        required 
+                        minlength="3">
+                </div>
+
+                <div class="form-grupo">
+                    <label for="reservaCPF">CPF do Solicitante *</label>
+                    <input 
+                        type="text" 
+                        id="reservaCPF" 
+                        name="reservaCPF" 
+                        class="form-campo" 
+                        placeholder="000.000.000-00" 
+                        required 
+                        minlength="11">
+                </div>
+
+                <div class="form-grupo">
+                    <label for="reservaEmail">E-mail para Envio de Prazos e Comprovante *</label>
+                    <input 
+                        type="email" 
+                        id="reservaEmail" 
+                        name="reservaEmail" 
+                        class="form-campo" 
+                        placeholder="seuemail@exemplo.com" 
+                        required>
+                </div>
+
+                <div class="form-grupo">
+                    <label for="reservaCelular">Celular / WhatsApp (para lembretes de devolução) *</label>
+                    <input 
+                        type="tel" 
+                        id="reservaCelular" 
+                        name="reservaCelular" 
+                        class="form-campo" 
+                        placeholder="(41) 99999-9999" 
+                        required 
+                        minlength="10">
+                </div>
+
+                <div class="form-grupo">
+                    <label for="reservaData">Data Prevista para Retirada no Balcão *</label>
+                    <input 
+                        type="date" 
+                        id="reservaData" 
+                        name="reservaData" 
+                        class="form-campo" 
+                        required>
+                </div>
+
+                <div style="text-align: center; margin-top: 25px;">
+                    <button type="submit" class="botao botao-reserva" style="font-size: 15px; padding: 13px 30px; width: 100%;">
+                        📅 Confirmar Reserva de Exemplar
+                    </button>
+                </div>
+            </form>
+        </section>
+
+        <section style="margin: 45px 0;">
+            <div class="secao-topo">
+                <h2>Minhas Reservas Ativas</h2>
+                <p>Acompanhe os exemplares reservados em seu navegador para retirada no balcão da universidade.</p>
+            </div>
+
+            <div id="reservasVazio" style="text-align: center; padding: 40px 20px; background: #ffffff; border-radius: 12px; border: 1px solid #ebdffb;">
+                <p style="font-size: 16px; color: #6d5b86; margin-bottom: 12px;">Você ainda não possui nenhuma reserva ativa de livro ou jogo.</p>
+                <p style="font-size: 13px; color: #8874a3;">Preencha o formulário acima ou navegue pelo catálogo para reservar seu primeiro título gratuitamente!</p>
+            </div>
+
+            <div id="listaReservasAtivas"></div>
+        </section>
+
+        <section style="text-align: center; margin: 30px 0 50px 0;">
+            <p style="margin-bottom: 15px; color: #5a417e;">Deseja conferir a tabela completa de multas, limites e prazos de atraso?</p>
+            <a href="tabela.html" class="botao botao-secundario">Consultar Tabela de Prazos e Tarifas</a>
+        </section>
+
+    </main>
+
+    <footer>
+        <div class="footer-conteudo">
+            <div class="footer-coluna">
+                <h3>Biblioteca Lilás</h3>
+                <p>
+                    Incentivando o gosto pela leitura, o raciocínio e a criatividade através
+                    de um acervo moderno, acessível e diversificado para toda a comunidade.
+                </p>
+            </div>
+
+            <div class="footer-coluna">
+                <h3>Navegação Rápida</h3>
+                <ul>
+                    <li><a href="index.html">Início</a></li>
+                    <li><a href="catalogo.html">Catálogo Completo</a></li>
+                    <li><a href="tabela.html">Tabela de Tarifas e Regras</a></li>
+                    <li><a href="favoritos.html">Meus Favoritos</a></li>
+                    <li><a href="carrinho.html">Meu Carrinho</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-coluna">
+                <h3>Departamentos</h3>
+                <ul>
+                    <li><a href="livros.html">Fantasia & Ficção</a></li>
+                    <li><a href="romance.html">Romance & Poesia</a></li>
+                    <li><a href="suspense.html">Suspense & Mistério</a></li>
+                    <li><a href="jogos.html">Jogos de Mesa & Cartas</a></li>
+                    <li><a href="multimidia.html">Espaço Multimídia</a></li>
+                    <li><a href="contatos.html">Fale Conosco</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-coluna">
+                <h3>Links e Redes</h3>
+                <ul>
+                    <li><a href="https://www.skoob.com.br" target="_blank" rel="noopener noreferrer">Perfil no Skoob</a></li>
+                    <li><a href="https://books.google.com.br" target="_blank" rel="noopener noreferrer">Google Livros</a></li>
+                    <li><a href="https://www.up.edu.br" target="_blank" rel="noopener noreferrer">Universidade Positivo</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="footer-copy">
+            <p>© 2026 Biblioteca Lilás. Projeto Front-End para Web - Universidade Positivo. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="js/scripts.js"></script>
+</body>
+</html>

@@ -1,0 +1,303 @@
+<!-- Projeto Front-End: Biblioteca Lilás - Universidade Positivo -->
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Livros de Fantasia & Ficção | Biblioteca Lilás</title>
+    <link rel="icon" href="imgs/icon.jfif">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .topo-fantasia {
+            background: linear-gradient(90deg, #ede2fc, #f5effe);
+            border-left: 5px solid #7743c7;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="topo-principal">
+            <div class="topo-container">
+                <a href="index.html" class="logo">
+                    <img src="imgs/icon.jfif" alt="Logo da Biblioteca Lilás">
+                    <div class="logo-texto">
+                        Biblioteca <span>Lilás</span>
+                        <small>Livraria & Espaço Cultural</small>
+                    </div>
+                </a>
+
+                <div class="topo-busca">
+                    <form action="catalogo.html" method="GET" class="form-busca-topo">
+                        <input type="text" name="busca" placeholder="O que você procura? (livro, autor, jogo...)" aria-label="Pesquisar">
+                        <button type="submit" aria-label="Buscar">🔍</button>
+                    </form>
+                </div>
+
+                <div class="topo-acoes">
+                    <a href="favoritos.html" class="acao-btn" title="Meus Favoritos">
+                        <span class="icone-acao">♡</span>
+                        <span class="texto-acao">Favoritos</span>
+                        <span id="contadorFavoritos" class="badge-contador">0</span>
+                    </a>
+                    <a href="carrinho.html" class="acao-btn acao-carrinho" title="Meu Carrinho">
+                        <span class="icone-acao">🛒</span>
+                        <span class="texto-acao">Carrinho</span>
+                        <span id="contadorCarrinho" class="badge-contador badge-carrinho">0</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <nav class="barra-navegacao">
+            <div class="nav-container">
+                <ul id="menu">
+                    <li><a href="index.html">Início</a></li>
+                    <li><a href="catalogo.html">Catálogo Completo</a></li>
+                    <li><a href="livros.html" class="ativo">Fantasia</a></li>
+                    <li><a href="romance.html">Romance</a></li>
+                    <li><a href="suspense.html">Suspense</a></li>
+                    <li><a href="jogos.html">Jogos</a></li>
+                    <li><a href="tabela.html">Prazos & Tarifas</a></li>
+                    <li><a href="reserva.html">Reservas</a></li>
+                    <li><a href="multimidia.html">Multimídia</a></li>
+                    <li><a href="sobre.html">Sobre</a></li>
+                    <li><a href="contatos.html">Contato</a></li>
+                    <li><a href="https://www.skoob.com.br" target="_blank" rel="noopener noreferrer" class="link-externo">Skoob ↗</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container">
+
+        <section class="topo-fantasia">
+            <h1>Acervo de Fantasia e Ficção Épica</h1>
+            <p>
+                Embarque em universos extraordinários povoados por reis, fadas, guerreiros míticos e viagens dimensionais.
+                Preços especiais para estudantes e entrega expressa em Curitiba.
+            </p>
+        </section>
+
+        <section class="grid-livros">
+            <article class="livro-card">
+                <img src="imgs/livro1.jpg" alt="Livro O Príncipe Cruel">
+                <div class="livro-info">
+                    <span class="livro-tag">Fantasia</span>
+                    <h3>O Príncipe Cruel</h3>
+                    <p class="livro-autor"><strong>Autor:</strong> Holly Black</p>
+                    <p class="livro-preco">R$ 49,90</p>
+                    <p>Jude tinha 7 anos quando seus pais foram assassinados e foi levada para o traiçoeiro Reino das Fadas de Elfhame.</p>
+                </div>
+                <div class="livro-acoes">
+                    <button type="button" class="botao botao-carrinho" onclick="adicionarAoCarrinho(1)">🛒 Comprar</button>
+                    <button type="button" class="botao botao-reserva" onclick="abrirReserva(1)">📅 Reservar</button>
+                    <button type="button" class="botao botao-secundario" onclick="adicionarFavorito(1)" title="Salvar nos Favoritos">♡</button>
+                </div>
+            </article>
+
+            <article class="livro-card">
+                <img src="imgs/livro2.jpg" alt="Livro Corte de Espinhos e Rosas">
+                <div class="livro-info">
+                    <span class="livro-tag">Fantasia</span>
+                    <h3>Corte de Espinhos e Rosas</h3>
+                    <p class="livro-autor"><strong>Autora:</strong> Sarah J. Maas</p>
+                    <p class="livro-preco">R$ 47,90</p>
+                    <p>Feyre mata um lobo na floresta e uma criatura bestial exige retribuição, levando-a para a terra mágica de Prythian.</p>
+                </div>
+                <div class="livro-acoes">
+                    <button type="button" class="botao botao-carrinho" onclick="adicionarAoCarrinho(2)">🛒 Comprar</button>
+                    <button type="button" class="botao botao-reserva" onclick="abrirReserva(2)">📅 Reservar</button>
+                    <button type="button" class="botao botao-secundario" onclick="adicionarFavorito(2)" title="Salvar nos Favoritos">♡</button>
+                </div>
+            </article>
+
+            <article class="livro-card">
+                <img src="imgs/livro3.jfif" alt="Livro Tempestade de Ônix">
+                <div class="livro-info">
+                    <span class="livro-tag">Fantasia</span>
+                    <h3>Tempestade de Ônix</h3>
+                    <p class="livro-autor"><strong>Autora:</strong> Rebecca Yarros</p>
+                    <p class="livro-preco">R$ 59,90</p>
+                    <p>O aclamado volume da saga de cavaleiros de dragão repleto de batalhas épicas, romance e reviravoltas intensas.</p>
+                </div>
+                <div class="livro-acoes">
+                    <button type="button" class="botao botao-carrinho" onclick="adicionarAoCarrinho(3)">🛒 Comprar</button>
+                    <button type="button" class="botao botao-reserva" onclick="abrirReserva(3)">📅 Reservar</button>
+                    <button type="button" class="botao botao-secundario" onclick="adicionarFavorito(3)" title="Salvar nos Favoritos">♡</button>
+                </div>
+            </article>
+
+            <article class="livro-card">
+                <img src="imgs/livro4.png" alt="Livro A Magia dos Quatro">
+                <div class="livro-info">
+                    <span class="livro-tag">Fantasia</span>
+                    <h3>A Magia dos Quatro</h3>
+                    <p class="livro-autor"><strong>Autora:</strong> Priscila Visacri</p>
+                    <p class="livro-preco">R$ 39,90</p>
+                    <p>Quatro elementos mágicos se entrelaçam em uma jornada de autodescoberta, poderes ancestrais e grandes perigos.</p>
+                </div>
+                <div class="livro-acoes">
+                    <button type="button" class="botao botao-carrinho" onclick="adicionarAoCarrinho(4)">🛒 Comprar</button>
+                    <button type="button" class="botao botao-reserva" onclick="abrirReserva(4)">📅 Reservar</button>
+                    <button type="button" class="botao botao-secundario" onclick="adicionarFavorito(4)" title="Salvar nos Favoritos">♡</button>
+                </div>
+            </article>
+
+            <article class="livro-card">
+                <img src="imgs/livro5.png" alt="Livro Jardins da Lua">
+                <div class="livro-info">
+                    <span class="livro-tag">Fantasia</span>
+                    <h3>Jardins da Lua</h3>
+                    <p class="livro-autor"><strong>Autor:</strong> Steven Erikson</p>
+                    <p class="livro-preco">R$ 64,90</p>
+                    <p>O Império Malazano trava guerras sangrentas e intrigas mágicas em uma das maiores obras da alta fantasia mundial.</p>
+                </div>
+                <div class="livro-acoes">
+                    <button type="button" class="botao botao-carrinho" onclick="adicionarAoCarrinho(5)">🛒 Comprar</button>
+                    <button type="button" class="botao botao-reserva" onclick="abrirReserva(5)">📅 Reservar</button>
+                    <button type="button" class="botao botao-secundario" onclick="adicionarFavorito(5)" title="Salvar nos Favoritos">♡</button>
+                </div>
+            </article>
+
+            <article class="livro-card">
+                <img src="imgs/livro6.jfif" alt="Livro A Rainha do Sol">
+                <div class="livro-info">
+                    <span class="livro-tag">Fantasia</span>
+                    <h3>A Rainha do Sol</h3>
+                    <p class="livro-autor"><strong>Autora:</strong> Nisha J. Tuli</p>
+                    <p class="livro-preco">R$ 44,90</p>
+                    <p>Doze mulheres disputam a sobrevivência na corte mortal do Rei Sol em provações letais de magia e poder.</p>
+                </div>
+                <div class="livro-acoes">
+                    <button type="button" class="botao botao-carrinho" onclick="adicionarAoCarrinho(6)">🛒 Comprar</button>
+                    <button type="button" class="botao botao-reserva" onclick="abrirReserva(6)">📅 Reservar</button>
+                    <button type="button" class="botao botao-secundario" onclick="adicionarFavorito(6)" title="Salvar nos Favoritos">♡</button>
+                </div>
+            </article>
+
+            <article class="livro-card">
+                <img src="imgs/livro7.jfif" alt="Livro Coração de Ouro">
+                <div class="livro-info">
+                    <span class="livro-tag">Fantasia</span>
+                    <h3>Coração de Ouro</h3>
+                    <p class="livro-autor"><strong>Autora:</strong> Ana Beatriz Brandão</p>
+                    <p class="livro-preco">R$ 42,90</p>
+                    <p>Uma lenda fantástica sobre dever real, batalhas ancestrais e o destino corajoso de uma princesa guerreira.</p>
+                </div>
+                <div class="livro-acoes">
+                    <button type="button" class="botao botao-carrinho" onclick="adicionarAoCarrinho(7)">🛒 Comprar</button>
+                    <button type="button" class="botao botao-reserva" onclick="abrirReserva(7)">📅 Reservar</button>
+                    <button type="button" class="botao botao-secundario" onclick="adicionarFavorito(7)" title="Salvar nos Favoritos">♡</button>
+                </div>
+            </article>
+
+            <article class="livro-card">
+                <img src="imgs/livro8.jfif" alt="Livro Luzes do Norte">
+                <div class="livro-info">
+                    <span class="livro-tag">Fantasia</span>
+                    <h3>Luzes do Norte</h3>
+                    <p class="livro-autor"><strong>Autora:</strong> Giulianna Domingues</p>
+                    <p class="livro-preco">R$ 38,90</p>
+                    <p>Um romance de fantasia nórdica envolvente com auroras boreais, caçadoras destemidas e criaturas místicas.</p>
+                </div>
+                <div class="livro-acoes">
+                    <button type="button" class="botao botao-carrinho" onclick="adicionarAoCarrinho(8)">🛒 Comprar</button>
+                    <button type="button" class="botao botao-reserva" onclick="abrirReserva(8)">📅 Reservar</button>
+                    <button type="button" class="botao botao-secundario" onclick="adicionarFavorito(8)" title="Salvar nos Favoritos">♡</button>
+                </div>
+            </article>
+
+            <article class="livro-card">
+                <img src="imgs/livro9.jfif" alt="Livro Harry Potter e a Pedra Filosofal">
+                <div class="livro-info">
+                    <span class="livro-tag">Fantasia</span>
+                    <h3>Harry Potter e a Pedra Filosofal</h3>
+                    <p class="livro-autor"><strong>Autora:</strong> J.K. Rowling</p>
+                    <p class="livro-preco">R$ 49,90</p>
+                    <p>Harry descobre no seu 11º aniversário que é um bruxo e parte para a mágica Escola de Hogwarts.</p>
+                </div>
+                <div class="livro-acoes">
+                    <button type="button" class="botao botao-carrinho" onclick="adicionarAoCarrinho(9)">🛒 Comprar</button>
+                    <button type="button" class="botao botao-reserva" onclick="abrirReserva(9)">📅 Reservar</button>
+                    <button type="button" class="botao botao-secundario" onclick="adicionarFavorito(9)" title="Salvar nos Favoritos">♡</button>
+                </div>
+            </article>
+
+            <article class="livro-card">
+                <img src="imgs/livro10.jfif" alt="Livro O Senhor dos Anéis">
+                <div class="livro-info">
+                    <span class="livro-tag">Fantasia</span>
+                    <h3>O Senhor dos Anéis</h3>
+                    <p class="livro-autor"><strong>Autor:</strong> J. R. R. Tolkien</p>
+                    <p class="livro-preco">R$ 69,90</p>
+                    <p>A saga de Frodo Bolseiro e a Sociedade do Anel pela Terra-Média para destruir o Um Anel de Sauron.</p>
+                </div>
+                <div class="livro-acoes">
+                    <button type="button" class="botao botao-carrinho" onclick="adicionarAoCarrinho(10)">🛒 Comprar</button>
+                    <button type="button" class="botao botao-reserva" onclick="abrirReserva(10)">📅 Reservar</button>
+                    <button type="button" class="botao botao-secundario" onclick="adicionarFavorito(10)" title="Salvar nos Favoritos">♡</button>
+                </div>
+            </article>
+        </section>
+
+        <section style="text-align: center; margin: 20px 0 40px 0;">
+            <p style="margin-bottom: 15px; color: #5a417e;">Quer consultar regras de empréstimo gratuito para alunos da UP?</p>
+            <a href="tabela.html" class="botao">Consultar Prazos e Tarifas</a>
+        </section>
+
+    </main>
+
+    <footer>
+        <div class="footer-conteudo">
+            <div class="footer-coluna">
+                <h3>Biblioteca Lilás</h3>
+                <p>
+                    Incentivando o gosto pela leitura, o raciocínio e a criatividade através
+                    de um acervo moderno, acessível e diversificado para toda a comunidade.
+                </p>
+            </div>
+
+            <div class="footer-coluna">
+                <h3>Navegação Rápida</h3>
+                <ul>
+                    <li><a href="index.html">Início</a></li>
+                    <li><a href="catalogo.html">Catálogo Completo</a></li>
+                    <li><a href="tabela.html">Tabela de Tarifas e Regras</a></li>                    <li><a href="favoritos.html">Meus Favoritos</a></li>
+                    <li><a href="carrinho.html">Meu Carrinho</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-coluna">
+                <h3>Departamentos</h3>
+                <ul>
+                    <li><a href="livros.html">Fantasia & Ficção</a></li>
+                    <li><a href="romance.html">Romance & Poesia</a></li>
+                    <li><a href="suspense.html">Suspense & Mistério</a></li>
+                    <li><a href="jogos.html">Jogos de Mesa & Cartas</a></li>
+                    <li><a href="multimidia.html">Espaço Multimídia</a></li>
+                    <li><a href="contatos.html">Fale Conosco</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-coluna">
+                <h3>Links e Redes</h3>
+                <ul>
+                    <li><a href="https://www.skoob.com.br" target="_blank" rel="noopener noreferrer">Perfil no Skoob</a></li>
+                    <li><a href="https://books.google.com.br" target="_blank" rel="noopener noreferrer">Google Livros</a></li>
+                    <li><a href="https://www.up.edu.br" target="_blank" rel="noopener noreferrer">Universidade Positivo</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="footer-copy">
+            <p>© 2026 Biblioteca Lilás. Projeto Front-End para Web - Universidade Positivo. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="js/scripts.js"></script>
+</body>
+</html>

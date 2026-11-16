@@ -1,0 +1,215 @@
+<!-- Projeto Front-End: Biblioteca Lilás - Universidade Positivo -->
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tarifas & Regras de Empréstimo | Biblioteca Lilás</title>
+    <link rel="icon" href="imgs/icon.jfif">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .tabela-destaque-topo {
+            background-color: #ffffff;
+            border-left: 5px solid #5a2c9c;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 25px;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="topo-principal">
+            <div class="topo-container">
+                <a href="index.html" class="logo">
+                    <img src="imgs/icon.jfif" alt="Logo da Biblioteca Lilás">
+                    <div class="logo-texto">
+                        Biblioteca <span>Lilás</span>
+                        <small>Livraria & Espaço Cultural</small>
+                    </div>
+                </a>
+
+                <div class="topo-busca">
+                    <form action="catalogo.html" method="GET" class="form-busca-topo">
+                        <input type="text" name="busca" placeholder="O que você procura? (livro, autor, jogo...)" aria-label="Pesquisar">
+                        <button type="submit" aria-label="Buscar">🔍</button>
+                    </form>
+                </div>
+
+                <div class="topo-acoes">
+                    <a href="favoritos.html" class="acao-btn" title="Meus Favoritos">
+                        <span class="icone-acao">♡</span>
+                        <span class="texto-acao">Favoritos</span>
+                        <span id="contadorFavoritos" class="badge-contador">0</span>
+                    </a>
+                    <a href="carrinho.html" class="acao-btn acao-carrinho" title="Meu Carrinho">
+                        <span class="icone-acao">🛒</span>
+                        <span class="texto-acao">Carrinho</span>
+                        <span id="contadorCarrinho" class="badge-contador badge-carrinho">0</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <nav class="barra-navegacao">
+            <div class="nav-container">
+                <ul id="menu">
+                    <li><a href="index.html">Início</a></li>
+                    <li><a href="catalogo.html">Catálogo Completo</a></li>
+                    <li><a href="livros.html">Fantasia</a></li>
+                    <li><a href="romance.html">Romance</a></li>
+                    <li><a href="suspense.html">Suspense</a></li>
+                    <li><a href="jogos.html">Jogos</a></li>
+                    <li><a href="tabela.html" class="ativo">Prazos & Tarifas</a></li>
+                    <li><a href="reserva.html">Reservas</a></li>
+                    <li><a href="multimidia.html">Multimídia</a></li>
+                    <li><a href="sobre.html">Sobre</a></li>
+                    <li><a href="contatos.html">Contato</a></li>
+                    <li><a href="https://www.skoob.com.br" target="_blank" rel="noopener noreferrer" class="link-externo">Skoob ↗</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container">
+
+        <section class="tabela-destaque-topo">
+            <h1>Regulamento, Prazos e Tarifas do Acervo</h1>
+            <p>
+                Confira a tabela informativa com todos os critérios para retirada de exemplares,
+                prazos de devolução, quantidade permitida por leitor e taxas de atraso.
+            </p>
+        </section>
+
+        <section class="tabela-container">
+            <table class="tabela-dados">
+                <thead>
+                    <tr>
+                        <th scope="col">Categoria do Material</th>
+                        <th scope="col">Prazo de Empréstimo</th>
+                        <th scope="col">Limite por Associado</th>
+                        <th scope="col">Renovações Permitidas</th>
+                        <th scope="col">Multa Diária (Atraso)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Livros de Fantasia & Ficção</strong></td>
+                        <td>14 dias corridos</td>
+                        <td>Até 3 volumes</td>
+                        <td>2 renovações consecutivas</td>
+                        <td>R$ 1,50 por dia</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Romances & Clássicos da Literatura</strong></td>
+                        <td>14 dias corridos</td>
+                        <td>Até 3 volumes</td>
+                        <td>2 renovações consecutivas</td>
+                        <td>R$ 1,50 por dia</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Suspense, Mistério & Lançamentos</strong></td>
+                        <td>7 dias corridos</td>
+                        <td>Até 2 volumes</td>
+                        <td>1 renovação consecutiva</td>
+                        <td>R$ 2,00 por dia</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Jogos de Cartas & Tabuleiro (Xadrez/Uno)</strong></td>
+                        <td>3 dias corridos</td>
+                        <td>1 jogo por leitor</td>
+                        <td>Não permite renovação</td>
+                        <td>R$ 3,00 por dia</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Quebra-Cabeças Artísticos & Temáticos</strong></td>
+                        <td>5 dias corridos</td>
+                        <td>1 conjunto</td>
+                        <td>1 renovação consecutiva</td>
+                        <td>R$ 2,50 por dia</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Coleções Especiais & Quadrinhos (HQs)</strong></td>
+                        <td>7 dias corridos</td>
+                        <td>Até 2 volumes</td>
+                        <td>1 renovação consecutiva</td>
+                        <td>R$ 2,00 por dia</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <section class="secao-info-dupla">
+            <article class="bloco-info">
+                <h2>Orientações sobre Empréstimos e Devoluções</h2>
+                <p>
+                    As reservas de livros para empréstimo gratuito podem ser feitas online na nossa Central de Reservas.
+                    As devoluções podem ser realizadas no balcão de recepção da Biblioteca Lilás
+                    ou na caixa de devolução expressa 24 horas localizada na entrada do prédio.
+                </p>
+                <a href="reserva.html" class="botao botao-reserva" style="margin-top: 10px;">📅 Fazer Reserva Online</a>
+            </article>
+
+            <article class="bloco-info">
+                <h2>Prefere Comprar para sua Estante?</h2>
+                <p>
+                    Todas as obras do acervo também contam com exemplares novos lacrados à venda com descontos especiais
+                    e opção de parcelamento direto pelo nosso carrinho online.
+                </p>
+                <a href="catalogo.html" class="botao botao-carrinho" style="margin-top: 10px;">🛒 Ver Preços e Comprar</a>
+            </article>
+        </section>
+
+    </main>
+
+    <footer>
+        <div class="footer-conteudo">
+            <div class="footer-coluna">
+                <h3>Biblioteca Lilás</h3>
+                <p>
+                    Incentivando o gosto pela leitura, o raciocínio e a criatividade através
+                    de um acervo moderno, acessível e diversificado para toda a comunidade.
+                </p>
+            </div>
+
+            <div class="footer-coluna">
+                <h3>Navegação Rápida</h3>
+                <ul>
+                    <li><a href="index.html">Início</a></li>
+                    <li><a href="catalogo.html">Catálogo Completo</a></li>
+                    <li><a href="tabela.html">Tabela de Tarifas e Regras</a></li>                    <li><a href="favoritos.html">Meus Favoritos</a></li>
+                    <li><a href="carrinho.html">Meu Carrinho</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-coluna">
+                <h3>Departamentos</h3>
+                <ul>
+                    <li><a href="livros.html">Fantasia & Ficção</a></li>
+                    <li><a href="romance.html">Romance & Poesia</a></li>
+                    <li><a href="suspense.html">Suspense & Mistério</a></li>
+                    <li><a href="jogos.html">Jogos de Mesa & Cartas</a></li>
+                    <li><a href="multimidia.html">Espaço Multimídia</a></li>
+                    <li><a href="contatos.html">Fale Conosco</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-coluna">
+                <h3>Links e Redes</h3>
+                <ul>
+                    <li><a href="https://www.skoob.com.br" target="_blank" rel="noopener noreferrer">Perfil no Skoob</a></li>
+                    <li><a href="https://books.google.com.br" target="_blank" rel="noopener noreferrer">Google Livros</a></li>
+                    <li><a href="https://www.up.edu.br" target="_blank" rel="noopener noreferrer">Universidade Positivo</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="footer-copy">
+            <p>© 2026 Biblioteca Lilás. Projeto Front-End para Web - Universidade Positivo. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="js/scripts.js"></script>
+</body>
+</html>

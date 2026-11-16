@@ -1,0 +1,223 @@
+<!-- Projeto Front-End: Biblioteca Lilás - Universidade Positivo -->
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalhes da Obra | Biblioteca Lilás</title>
+    <link rel="icon" href="imgs/icon.jfif">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .detalhes-container {
+            display: flex;
+            gap: 40px;
+            background-color: #ffffff;
+            border: 1px solid #e7dbf9;
+            border-radius: 14px;
+            padding: 35px;
+            box-shadow: 0 4px 16px rgba(75, 36, 132, 0.08);
+            margin: 25px 0 45px 0;
+            align-items: center;
+        }
+        .detalhes-imagem {
+            max-width: 300px;
+            width: 100%;
+            text-align: center;
+        }
+        .detalhes-imagem img {
+            max-width: 100%;
+            max-height: 380px;
+            object-fit: contain;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+        }
+        .detalhes-info {
+            flex: 1;
+        }
+        @media (max-width: 800px) {
+            .detalhes-container {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="topo-principal">
+            <div class="topo-container">
+                <a href="index.html" class="logo">
+                    <img src="imgs/icon.jfif" alt="Logo da Biblioteca Lilás">
+                    <div class="logo-texto">
+                        Biblioteca <span>Lilás</span>
+                        <small>Livraria & Espaço Cultural</small>
+                    </div>
+                </a>
+
+                <div class="topo-busca">
+                    <form action="catalogo.html" method="GET" class="form-busca-topo">
+                        <input type="text" name="busca" placeholder="O que você procura? (livro, autor, jogo...)" aria-label="Pesquisar">
+                        <button type="submit" aria-label="Buscar">🔍</button>
+                    </form>
+                </div>
+
+                <div class="topo-acoes">
+                    <a href="favoritos.html" class="acao-btn" title="Meus Favoritos">
+                        <span class="icone-acao">♡</span>
+                        <span class="texto-acao">Favoritos</span>
+                        <span id="contadorFavoritos" class="badge-contador">0</span>
+                    </a>
+                    <a href="carrinho.html" class="acao-btn acao-carrinho" title="Meu Carrinho">
+                        <span class="icone-acao">🛒</span>
+                        <span class="texto-acao">Carrinho</span>
+                        <span id="contadorCarrinho" class="badge-contador badge-carrinho">0</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <nav class="barra-navegacao">
+            <div class="nav-container">
+                <ul id="menu">
+                    <li><a href="index.html">Início</a></li>
+                    <li><a href="catalogo.html" class="ativo">Catálogo Completo</a></li>
+                    <li><a href="livros.html">Fantasia</a></li>
+                    <li><a href="romance.html">Romance</a></li>
+                    <li><a href="suspense.html">Suspense</a></li>
+                    <li><a href="jogos.html">Jogos</a></li>
+                    <li><a href="tabela.html">Prazos & Tarifas</a></li>
+                    <li><a href="reserva.html">Reservas</a></li>
+                    <li><a href="multimidia.html">Multimídia</a></li>
+                    <li><a href="sobre.html">Sobre</a></li>
+                    <li><a href="contatos.html">Contato</a></li>
+                    <li><a href="https://www.skoob.com.br" target="_blank" rel="noopener noreferrer" class="link-externo">Skoob ↗</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container">
+
+        <section class="secao-topo">
+            <h1>Ficha Técnica do Acervo</h1>
+            <p>Informações detalhadas sobre a obra selecionada para compra ou empréstimo.</p>
+        </section>
+
+        <section class="detalhes-container" id="detalhesConteudo">
+            <div class="detalhes-imagem">
+                <img id="detalhesFoto" src="imgs/livro1.jpg" alt="Capa">
+            </div>
+            <div class="detalhes-info">
+                <span id="detalhesCategoria" class="livro-tag">Fantasia</span>
+                <h2 id="detalhesTitulo" style="color: #3b1d6b; margin: 10px 0 6px 0; font-size: 26px;">Título da Obra</h2>
+                <p style="font-size: 15px; color: #5c4b77; margin-bottom: 10px;"><strong>Autor / Origem:</strong> <span id="detalhesAutor">Autor</span></p>
+                <p id="detalhesPreco" class="livro-preco" style="font-size: 24px; margin-bottom: 16px;">R$ 49,90</p>
+                <p id="detalhesDescricao" style="line-height: 1.7; margin-bottom: 24px; color: #403254;">
+                    Descrição completa da obra.
+                </p>
+                <div class="botoes-grupo">
+                    <button type="button" id="btnComprarDetalhe" class="botao botao-carrinho" style="font-size: 15px; padding: 12px 22px;">🛒 Adicionar ao Carrinho</button>
+                    <button type="button" id="btnReservarDetalhe" class="botao botao-reserva" style="font-size: 15px; padding: 12px 22px;">📅 Reservar Exemplar</button>
+                    <button type="button" id="btnFavoritarDetalhe" class="botao botao-secundario">♡ Salvar nos Favoritos</button>
+                    <a href="catalogo.html" class="botao botao-secundario">Voltar ao Catálogo</a>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <div class="footer-conteudo">
+            <div class="footer-coluna">
+                <h3>Biblioteca Lilás</h3>
+                <p>
+                    Incentivando o gosto pela leitura, o raciocínio e a criatividade através
+                    de um acervo moderno, acessível e diversificado para toda a comunidade.
+                </p>
+            </div>
+
+            <div class="footer-coluna">
+                <h3>Navegação Rápida</h3>
+                <ul>
+                    <li><a href="index.html">Início</a></li>
+                    <li><a href="catalogo.html">Catálogo Completo</a></li>
+                    <li><a href="tabela.html">Tabela de Tarifas e Regras</a></li>                    <li><a href="favoritos.html">Meus Favoritos</a></li>
+                    <li><a href="carrinho.html">Meu Carrinho</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-coluna">
+                <h3>Departamentos</h3>
+                <ul>
+                    <li><a href="livros.html">Fantasia & Ficção</a></li>
+                    <li><a href="romance.html">Romance & Poesia</a></li>
+                    <li><a href="suspense.html">Suspense & Mistério</a></li>
+                    <li><a href="jogos.html">Jogos de Mesa & Cartas</a></li>
+                    <li><a href="multimidia.html">Espaço Multimídia</a></li>
+                    <li><a href="contatos.html">Fale Conosco</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-coluna">
+                <h3>Links e Redes</h3>
+                <ul>
+                    <li><a href="https://www.skoob.com.br" target="_blank" rel="noopener noreferrer">Perfil no Skoob</a></li>
+                    <li><a href="https://books.google.com.br" target="_blank" rel="noopener noreferrer">Google Livros</a></li>
+                    <li><a href="https://www.up.edu.br" target="_blank" rel="noopener noreferrer">Universidade Positivo</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="footer-copy">
+            <p>© 2026 Biblioteca Lilás. Projeto Front-End para Web - Universidade Positivo. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="js/scripts.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            var params = new URLSearchParams(window.location.search);
+            var idParam = parseInt(params.get("id"));
+            var item = null;
+
+            if (!isNaN(idParam)) {
+                for (var i = 0; i < acervoLivros.length; i++) {
+                    if (acervoLivros[i].id === idParam) {
+                        item = acervoLivros[i];
+                        break;
+                    }
+                }
+            }
+
+            if (!item && acervoLivros.length > 0) {
+                item = acervoLivros[0];
+            }
+
+            if (item) {
+                document.getElementById("detalhesFoto").src = item.imagem;
+                document.getElementById("detalhesFoto").alt = item.titulo;
+                document.getElementById("detalhesCategoria").textContent = item.categoria;
+                document.getElementById("detalhesTitulo").textContent = item.titulo;
+                document.getElementById("detalhesAutor").textContent = item.autor;
+                document.getElementById("detalhesPreco").textContent = formatarPreco(item.preco);
+                document.getElementById("detalhesDescricao").textContent = item.descricao;
+
+                var btnComprar = document.getElementById("btnComprarDetalhe");
+                if (btnComprar) {
+                    btnComprar.addEventListener("click", function() {
+                        adicionarAoCarrinho(item.id);
+                    });
+                }
+
+                var btnFav = document.getElementById("btnFavoritarDetalhe");
+                if (btnFav) {
+                    btnFav.addEventListener("click", function() {
+                        adicionarFavorito(item.id);
+                    });
+                }
+            }
+        });
+    </script>
+</body>
+</html>

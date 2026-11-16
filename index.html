@@ -1,0 +1,286 @@
+<!-- Projeto Front-End: Biblioteca Lilás - Universidade Positivo -->
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Início | Biblioteca Lilás</title>
+    <link rel="icon" href="imgs/icon.jfif">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .banner-destaque-home {
+            background: linear-gradient(135deg, #ede2fc 0%, #fbf9ff 100%);
+            border: 2px solid #dfcff8;
+        }
+        .coluna-card-destaque {
+            background-color: #ffffff;
+            border-top: 4px solid #7040bd;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="topo-principal">
+            <div class="topo-container">
+                <a href="index.html" class="logo">
+                    <img src="imgs/icon.jfif" alt="Logo da Biblioteca Lilás">
+                    <div class="logo-texto">
+                        Biblioteca <span>Lilás</span>
+                        <small>Livraria & Espaço Cultural</small>
+                    </div>
+                </a>
+
+                <div class="topo-busca">
+                    <form action="catalogo.html" method="GET" class="form-busca-topo">
+                        <input type="text" name="busca" placeholder="O que você procura? (livro, autor, jogo...)" aria-label="Pesquisar">
+                        <button type="submit" aria-label="Buscar">🔍</button>
+                    </form>
+                </div>
+
+                <div class="topo-acoes">
+                    <a href="favoritos.html" class="acao-btn" title="Meus Favoritos">
+                        <span class="icone-acao">♡</span>
+                        <span class="texto-acao">Favoritos</span>
+                        <span id="contadorFavoritos" class="badge-contador">0</span>
+                    </a>
+                    <a href="carrinho.html" class="acao-btn acao-carrinho" title="Meu Carrinho">
+                        <span class="icone-acao">🛒</span>
+                        <span class="texto-acao">Carrinho</span>
+                        <span id="contadorCarrinho" class="badge-contador badge-carrinho">0</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <nav class="barra-navegacao">
+            <div class="nav-container">
+                <ul id="menu">
+                    <li><a href="index.html" class="ativo">Início</a></li>
+                    <li><a href="catalogo.html">Catálogo Completo</a></li>
+                    <li><a href="livros.html">Fantasia</a></li>
+                    <li><a href="romance.html">Romance</a></li>
+                    <li><a href="suspense.html">Suspense</a></li>
+                    <li><a href="jogos.html">Jogos</a></li>
+                    <li><a href="tabela.html">Prazos & Tarifas</a></li>
+                    <li><a href="reserva.html">Reservas</a></li>
+                    <li><a href="multimidia.html">Multimídia</a></li>
+                    <li><a href="sobre.html">Sobre</a></li>
+                    <li><a href="contatos.html">Contato</a></li>
+                    <li><a href="https://www.skoob.com.br" target="_blank" rel="noopener noreferrer" class="link-externo">Skoob ↗</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container">
+
+        <section class="banner banner-destaque-home">
+            <div class="banner-conteudo">
+                <p class="tagline">BEM-VINDO À BIBLIOTECA LILÁS</p>
+                <h1>Descubra histórias e universos que transformam você.</h1>
+                <p>
+                    Compre seus livros de fantasia, romances inesquecíveis,
+                    suspenses eletrizantes e jogos de tabuleiro favoritos com preços acessíveis e entrega rápida em Curitiba.
+                </p>
+                <div class="botoes-grupo">
+                    <a href="catalogo.html" class="botao">Explorar Catálogo & Comprar</a>
+                    <a href="tabela.html" class="botao botao-secundario">Regras de Reserva & Empréstimo</a>
+                </div>
+            </div>
+            <div style="text-align: center; max-width: 300px; margin-top: 20px;">
+                <img src="imgs/livro1.jpg" alt="Livro Destaque do Mês" style="max-height: 270px; border-radius: 12px; box-shadow: 0 8px 20px rgba(0,0,0,0.15);">
+                <p style="margin-top: 8px; font-weight: bold; color: #532c91;">Destaque: O Príncipe Cruel - R$ 49,90</p>
+            </div>
+        </section>
+
+        <section style="background-color: #ffffff; border: 1px solid #e2d4f8; border-radius: 12px; padding: 18px 24px; margin-bottom: 35px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap;">
+            <div>
+                <strong style="color: #4b2288; font-size: 15px;">Compra de Livros vs. Reserva para Empréstimo Estudantil</strong>
+                <p style="font-size: 13px; color: #62507d; margin-top: 4px;">• <strong>Para Comprar:</strong> Adicione qualquer exemplar novo ao seu carrinho pelo botão "🛒 Comprar" e finalize seu pedido com facilidade.<br>• <strong>Para Reservar (Empréstimo Gratuito):</strong> Reserve qualquer exemplar online informando seu CPF, e-mail e celular para receber os avisos de prazos e retire no balcão!</p>
+            </div>
+            <a href="reserva.html" class="botao botao-reserva" style="font-size: 13px; padding: 10px 20px; margin-top: 8px;">📅 Fazer Reserva Online</a>
+        </section>
+
+        <section>
+            <div class="secao-topo">
+                <h2>Categorias Principais do Acervo</h2>
+                <p>Selecione um dos nossos departamentos literários para ver as obras e jogos disponíveis.</p>
+            </div>
+
+            <div class="grid-categorias">
+                <a href="livros.html" class="card-categoria coluna-card-destaque">
+                    <span class="icone-categoria">🪄</span>
+                    <h3>Fantasia & Ficção</h3>
+                    <p>Contos épicos, seres mitológicos, reinos distantes e aventuras mágicas.</p>
+                </a>
+
+                <a href="romance.html" class="card-categoria coluna-card-destaque">
+                    <span class="icone-categoria">💜</span>
+                    <h3>Romance & Poesia</h3>
+                    <p>Grandes amores clássicos, dramas contemporâneos e reflexões poéticas.</p>
+                </a>
+
+                <a href="suspense.html" class="card-categoria coluna-card-destaque">
+                    <span class="icone-categoria">🔍</span>
+                    <h3>Suspense & Mistério</h3>
+                    <p>Investigações policiais, reviravoltas psicológicas e enigmas sombrios.</p>
+                </a>
+
+                <a href="jogos.html" class="card-categoria coluna-card-destaque">
+                    <span class="icone-categoria">🎲</span>
+                    <h3>Jogos de Tabuleiro</h3>
+                    <p>Xadrez, quebra-cabeças, Uno e baralhos para praticar raciocínio e lazer.</p>
+                </a>
+            </div>
+        </section>
+
+        <section>
+            <div class="secao-topo">
+                <h2>Obras em Destaque na Semana</h2>
+                <p>Confira os títulos mais procurados com preço e botão direto para o carrinho.</p>
+            </div>
+
+            <div class="grid-livros">
+                <article class="livro-card">
+                    <img src="imgs/livro1.jpg" alt="Capa do livro O Príncipe Cruel">
+                    <div class="livro-info">
+                        <span class="livro-tag">Fantasia</span>
+                        <h3>O Príncipe Cruel</h3>
+                        <p class="livro-autor"><strong>Autor:</strong> Holly Black</p>
+                        <p class="livro-preco">R$ 49,90</p>
+                        <p>Uma humana criada em um mundo de fadas intragáveis e corte perigosa.</p>
+                    </div>
+                    <div class="livro-acoes">
+                    <button type="button" class="botao botao-carrinho" onclick="adicionarAoCarrinho(1)">🛒 Comprar</button>
+                    <button type="button" class="botao botao-reserva" onclick="abrirReserva(1)">📅 Reservar</button>
+                    <button type="button" class="botao botao-secundario" onclick="adicionarFavorito(1)" title="Salvar nos Favoritos">♡</button>
+                </div>
+                </article>
+
+                <article class="livro-card">
+                    <img src="imgs/livro_romance1.webp" alt="Capa do livro Como Terminar uma História de Amor">
+                    <div class="livro-info">
+                        <span class="livro-tag">Romance</span>
+                        <h3>Como Terminar uma História de Amor</h3>
+                        <p class="livro-autor"><strong>Autora:</strong> Yulin Kuang</p>
+                        <p class="livro-preco">R$ 39,90</p>
+                        <p>Helen e Grant precisam trabalhar juntos como roteiristas em Hollywood após anos de afastamento.</p>
+                    </div>
+                    <div class="livro-acoes">
+                    <button type="button" class="botao botao-carrinho" onclick="adicionarAoCarrinho(11)">🛒 Comprar</button>
+                    <button type="button" class="botao botao-reserva" onclick="abrirReserva(11)">📅 Reservar</button>
+                    <button type="button" class="botao botao-secundario" onclick="adicionarFavorito(11)" title="Salvar nos Favoritos">♡</button>
+                </div>
+                </article>
+
+                <article class="livro-card">
+                    <img src="imgs/livro_suspense1.webp" alt="Capa do livro Nunca Minta">
+                    <div class="livro-info">
+                        <span class="livro-tag">Suspense</span>
+                        <h3>Nunca Minta</h3>
+                        <p class="livro-autor"><strong>Autora:</strong> Freida McFadden</p>
+                        <p class="livro-preco">R$ 42,90</p>
+                        <p>Recém-casados isolados na neve em uma mansão com fitas secretas de uma psiquiatra desaparecida.</p>
+                    </div>
+                    <div class="livro-acoes">
+                    <button type="button" class="botao botao-carrinho" onclick="adicionarAoCarrinho(21)">🛒 Comprar</button>
+                    <button type="button" class="botao botao-reserva" onclick="abrirReserva(21)">📅 Reservar</button>
+                    <button type="button" class="botao botao-secundario" onclick="adicionarFavorito(21)" title="Salvar nos Favoritos">♡</button>
+                </div>
+                </article>
+
+                <article class="livro-card">
+                    <img src="imgs/xadrez.webp" alt="Jogo de Xadrez Clássico de Madeira">
+                    <div class="livro-info">
+                        <span class="livro-tag">Jogos</span>
+                        <h3>Jogo de Xadrez Clássico de Madeira</h3>
+                        <p class="livro-autor"><strong>Origem:</strong> Tabuleiro & Peças em Madeira</p>
+                        <p class="livro-preco">R$ 89,90</p>
+                        <p>Conjunto refinado em madeira nobre com peças maciças para treinos e partidas de raciocínio.</p>
+                    </div>
+                    <div class="livro-acoes">
+                    <button type="button" class="botao botao-carrinho" onclick="adicionarAoCarrinho(31)">🛒 Comprar</button>
+                    <button type="button" class="botao botao-reserva" onclick="abrirReserva(31)">📅 Reservar</button>
+                    <button type="button" class="botao botao-secundario" onclick="adicionarFavorito(31)" title="Salvar nos Favoritos">♡</button>
+                </div>
+                </article>
+            </div>
+        </section>
+
+        <section class="secao-info-dupla">
+            <article class="bloco-info">
+                <h2>Sobre o Projeto Biblioteca Lilás</h2>
+                <p>
+                    A Biblioteca Lilás é um projeto de incentivo à leitura e difusão
+                    da literatura infanto-juvenil, clássica e de entretenimento.
+                </p>
+                <p>
+                    Disponibilizamos venda e empréstimos de títulos para estudantes, além de
+                    salas temáticas de leitura e clube de debates literários.
+                </p>
+                <a href="sobre.html" class="botao botao-secundario">Leia mais sobre nossa história</a>
+            </article>
+
+            <article class="bloco-info">
+                <h2>Localização e Funcionamento</h2>
+                <p><strong>Endereço:</strong> Rua das Acácias, nº 420 - Bairro Universitário, Curitiba - PR.</p>
+                <p><strong>Horários de Atendimento:</strong></p>
+                <p style="margin-left: 10px;">• Segunda a Sexta: das 08h00 às 21h30<br>• Sábados: das 09h00 às 15h00</p>
+                <p><strong>Contato Telefônico:</strong> (41) 3200-8800 | contato@bibliotecalilas.com.br</p>
+                <a href="contatos.html" class="botao">Fale Conosco Diretamente</a>
+            </article>
+        </section>
+
+    </main>
+
+    <footer>
+        <div class="footer-conteudo">
+            <div class="footer-coluna">
+                <h3>Biblioteca Lilás</h3>
+                <p>
+                    Incentivando o gosto pela leitura, o raciocínio e a criatividade através
+                    de um acervo moderno, acessível e diversificado para toda a comunidade.
+                </p>
+            </div>
+
+            <div class="footer-coluna">
+                <h3>Navegação Rápida</h3>
+                <ul>
+                    <li><a href="index.html">Início</a></li>
+                    <li><a href="catalogo.html">Catálogo Completo</a></li>
+                    <li><a href="tabela.html">Tabela de Tarifas e Regras</a></li>                    <li><a href="favoritos.html">Meus Favoritos</a></li>
+                    <li><a href="carrinho.html">Meu Carrinho</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-coluna">
+                <h3>Departamentos</h3>
+                <ul>
+                    <li><a href="livros.html">Fantasia & Ficção</a></li>
+                    <li><a href="romance.html">Romance & Poesia</a></li>
+                    <li><a href="suspense.html">Suspense & Mistério</a></li>
+                    <li><a href="jogos.html">Jogos de Mesa & Cartas</a></li>
+                    <li><a href="multimidia.html">Espaço Multimídia</a></li>
+                    <li><a href="contatos.html">Fale Conosco</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-coluna">
+                <h3>Links e Redes</h3>
+                <ul>
+                    <li><a href="https://www.skoob.com.br" target="_blank" rel="noopener noreferrer">Perfil no Skoob</a></li>
+                    <li><a href="https://books.google.com.br" target="_blank" rel="noopener noreferrer">Google Livros</a></li>
+                    <li><a href="https://www.up.edu.br" target="_blank" rel="noopener noreferrer">Universidade Positivo</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="footer-copy">
+            <p>© 2026 Biblioteca Lilás. Projeto Front-End para Web - Universidade Positivo. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="js/scripts.js"></script>
+</body>
+</html>

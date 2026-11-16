@@ -1,0 +1,299 @@
+<!-- Projeto Front-End: Biblioteca Lilás - Universidade Positivo -->
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Suspense & Mistério | Biblioteca Lilás</title>
+    <link rel="icon" href="imgs/icon.jfif">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .topo-suspense {
+            background: linear-gradient(90deg, #e4def0, #ece3fa);
+            border-left: 5px solid #482c7e;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="topo-principal">
+            <div class="topo-container">
+                <a href="index.html" class="logo">
+                    <img src="imgs/icon.jfif" alt="Logo da Biblioteca Lilás">
+                    <div class="logo-texto">
+                        Biblioteca <span>Lilás</span>
+                        <small>Livraria & Espaço Cultural</small>
+                    </div>
+                </a>
+
+                <div class="topo-busca">
+                    <form action="catalogo.html" method="GET" class="form-busca-topo">
+                        <input type="text" name="busca" placeholder="O que você procura? (livro, autor, jogo...)" aria-label="Pesquisar">
+                        <button type="submit" aria-label="Buscar">🔍</button>
+                    </form>
+                </div>
+
+                <div class="topo-acoes">
+                    <a href="favoritos.html" class="acao-btn" title="Meus Favoritos">
+                        <span class="icone-acao">♡</span>
+                        <span class="texto-acao">Favoritos</span>
+                        <span id="contadorFavoritos" class="badge-contador">0</span>
+                    </a>
+                    <a href="carrinho.html" class="acao-btn acao-carrinho" title="Meu Carrinho">
+                        <span class="icone-acao">🛒</span>
+                        <span class="texto-acao">Carrinho</span>
+                        <span id="contadorCarrinho" class="badge-contador badge-carrinho">0</span>
+                    </a>
+                    <button id="menuBtn" type="button" aria-label="Abrir Menu">☰</button>
+                </div>
+            </div>
+        </div>
+
+        <nav class="barra-navegacao">
+            <div class="nav-container">
+                <ul id="menu">
+                    <li><a href="index.html">Início</a></li>
+                    <li><a href="catalogo.html">Catálogo Completo</a></li>
+                    <li><a href="livros.html">Fantasia</a></li>
+                    <li><a href="romance.html">Romance</a></li>
+                    <li><a href="suspense.html" class="ativo">Suspense</a></li>
+                    <li><a href="jogos.html">Jogos</a></li>
+                    <li><a href="tabela.html">Prazos & Tarifas</a></li>
+                    <li><a href="reserva.html">Reservas</a></li>
+                    <li><a href="multimidia.html">Multimídia</a></li>
+                    <li><a href="sobre.html">Sobre</a></li>
+                    <li><a href="contatos.html">Contato</a></li>
+                    <li><a href="https://www.skoob.com.br" target="_blank" rel="noopener noreferrer" class="link-externo">Skoob ↗</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container">
+
+        <section class="topo-suspense">
+            <h1>Acervo de Suspense, Policial & Thriller</h1>
+            <p>
+                Enigmas indecifráveis, tramas psicológicas envolventes e investigações criminais de tirar o fôlego.
+                Adquira seus títulos favoritos e receba diretamente em sua residência.
+            </p>
+        </section>
+
+        <section class="grid-livros">
+            <article class="livro-card">
+                <img src="imgs/livro_suspense1.webp" alt="Livro Nunca Minta">
+                <div class="livro-info">
+                    <span class="livro-tag">Thriller Psicológico</span>
+                    <h3>Nunca Minta</h3>
+                    <p class="livro-autor"><strong>Autora:</strong> Freida McFadden</p>
+                    <p class="livro-preco">R$ 42,90</p>
+                    <p>Recém-casados ficam presos pela neve na antiga mansão de uma psiquiatra desaparecida e acham fitas secretas.</p>
+                </div>
+                <div class="livro-acoes">
+                    <button type="button" class="botao botao-carrinho" onclick="adicionarAoCarrinho(21)">🛒 Comprar</button>
+                    <button type="button" class="botao botao-reserva" onclick="abrirReserva(21)">📅 Reservar</button>
+                    <button type="button" class="botao botao-secundario" onclick="adicionarFavorito(21)" title="Salvar nos Favoritos">♡</button>
+                </div>
+            </article>
+
+            <article class="livro-card">
+                <img src="imgs/livro_suspense2.webp" alt="Livro O Massacre da Família Hope">
+                <div class="livro-info">
+                    <span class="livro-tag">Mistério Gótico</span>
+                    <h3>O Massacre da Família Hope</h3>
+                    <p class="livro-autor"><strong>Autor:</strong> Riley Sager</p>
+                    <p class="livro-preco">R$ 47,90</p>
+                    <p>Uma cuidadora é contratada para cuidar de Lenora Hope, única sobrevivente de uma chacina familiar em 1929.</p>
+                </div>
+                <div class="livro-acoes">
+                    <button type="button" class="botao botao-carrinho" onclick="adicionarAoCarrinho(22)">🛒 Comprar</button>
+                    <button type="button" class="botao botao-reserva" onclick="abrirReserva(22)">📅 Reservar</button>
+                    <button type="button" class="botao botao-secundario" onclick="adicionarFavorito(22)" title="Salvar nos Favoritos">♡</button>
+                </div>
+            </article>
+
+            <article class="livro-card">
+                <img src="imgs/livro_suspense3.webp" alt="Livro Jantar Secreto">
+                <div class="livro-info">
+                    <span class="livro-tag">Suspense Nacional</span>
+                    <h3>Jantar Secreto</h3>
+                    <p class="livro-autor"><strong>Autor:</strong> Raphael Montes</p>
+                    <p class="livro-preco">R$ 49,90</p>
+                    <p>Quatro amigos endividados no Rio de Janeiro organizam jantares clandestinos para a elite com um prato macabro.</p>
+                </div>
+                <div class="livro-acoes">
+                    <button type="button" class="botao botao-carrinho" onclick="adicionarAoCarrinho(23)">🛒 Comprar</button>
+                    <button type="button" class="botao botao-reserva" onclick="abrirReserva(23)">📅 Reservar</button>
+                    <button type="button" class="botao botao-secundario" onclick="adicionarFavorito(23)" title="Salvar nos Favoritos">♡</button>
+                </div>
+            </article>
+
+            <article class="livro-card">
+                <img src="imgs/livro_suspense4.webp" alt="Livro A Estranha na Cama">
+                <div class="livro-info">
+                    <span class="livro-tag">Suspense Psicológico</span>
+                    <h3>A Estranha na Cama</h3>
+                    <p class="livro-autor"><strong>Autor:</strong> Raphael Montes</p>
+                    <p class="livro-preco">R$ 44,90</p>
+                    <p>Um suspense visceral que explora a obsessão humana, segredos do passado e as consequências mortais de escolhas frias.</p>
+                </div>
+                <div class="livro-acoes">
+                    <button type="button" class="botao botao-carrinho" onclick="adicionarAoCarrinho(24)">🛒 Comprar</button>
+                    <button type="button" class="botao botao-reserva" onclick="abrirReserva(24)">📅 Reservar</button>
+                    <button type="button" class="botao botao-secundario" onclick="adicionarFavorito(24)" title="Salvar nos Favoritos">♡</button>
+                </div>
+            </article>
+
+            <article class="livro-card">
+                <img src="imgs/livro_suspense5.webp" alt="Livro A Contadora">
+                <div class="livro-info">
+                    <span class="livro-tag">Thriller Corporativo</span>
+                    <h3>A Contadora</h3>
+                    <p class="livro-autor"><strong>Autora:</strong> Freida McFadden</p>
+                    <p class="livro-preco">R$ 43,90</p>
+                    <p>Duas funcionárias em um escritório corporativo se envolvem em uma teia de mentiras contábeis e crimes fatais.</p>
+                </div>
+                <div class="livro-acoes">
+                    <button type="button" class="botao botao-carrinho" onclick="adicionarAoCarrinho(25)">🛒 Comprar</button>
+                    <button type="button" class="botao botao-reserva" onclick="abrirReserva(25)">📅 Reservar</button>
+                    <button type="button" class="botao botao-secundario" onclick="adicionarFavorito(25)" title="Salvar nos Favoritos">♡</button>
+                </div>
+            </article>
+
+            <article class="livro-card">
+                <img src="imgs/livro_suspense6.webp" alt="Livro A Última Casa da Rua Needless">
+                <div class="livro-info">
+                    <span class="livro-tag">Mistério & Horror</span>
+                    <h3>A Última Casa da Rua Needless</h3>
+                    <p class="livro-autor"><strong>Autora:</strong> Catriona Ward</p>
+                    <p class="livro-preco">R$ 48,90</p>
+                    <p>Um morador solitário e sua gata guardam segredos perturbadores em uma casa isolada perto da floresta.</p>
+                </div>
+                <div class="livro-acoes">
+                    <button type="button" class="botao botao-carrinho" onclick="adicionarAoCarrinho(26)">🛒 Comprar</button>
+                    <button type="button" class="botao botao-reserva" onclick="abrirReserva(26)">📅 Reservar</button>
+                    <button type="button" class="botao botao-secundario" onclick="adicionarFavorito(26)" title="Salvar nos Favoritos">♡</button>
+                </div>
+            </article>
+
+            <article class="livro-card">
+                <img src="imgs/livro_suspense7.webp" alt="Livro Crime no Copan">
+                <div class="livro-info">
+                    <span class="livro-tag">Policial Brasileiro</span>
+                    <h3>Crime no Copan</h3>
+                    <p class="livro-autor"><strong>Autor:</strong> Victor Bonini</p>
+                    <p class="livro-preco">R$ 41,90</p>
+                    <p>Uma queda fatal do famoso edifício Copan em São Paulo dá início à caçada de um assassino meticuloso.</p>
+                </div>
+                <div class="livro-acoes">
+                    <button type="button" class="botao botao-carrinho" onclick="adicionarAoCarrinho(27)">🛒 Comprar</button>
+                    <button type="button" class="botao botao-reserva" onclick="abrirReserva(27)">📅 Reservar</button>
+                    <button type="button" class="botao botao-secundario" onclick="adicionarFavorito(27)" title="Salvar nos Favoritos">♡</button>
+                </div>
+            </article>
+
+            <article class="livro-card">
+                <img src="imgs/livro_suspense8.webp" alt="Livro A Garota do Lago">
+                <div class="livro-info">
+                    <span class="livro-tag">Investigação Criminal</span>
+                    <h3>A Garota do Lago</h3>
+                    <p class="livro-autor"><strong>Autor:</strong> Charlie Donlea</p>
+                    <p class="livro-preco">R$ 39,90</p>
+                    <p>A morte misteriosa de uma jovem estudante em Summit Lake faz uma repórter investigar segredos da cidadezinha.</p>
+                </div>
+                <div class="livro-acoes">
+                    <button type="button" class="botao botao-carrinho" onclick="adicionarAoCarrinho(28)">🛒 Comprar</button>
+                    <button type="button" class="botao botao-reserva" onclick="abrirReserva(28)">📅 Reservar</button>
+                    <button type="button" class="botao botao-secundario" onclick="adicionarFavorito(28)" title="Salvar nos Favoritos">♡</button>
+                </div>
+            </article>
+
+            <article class="livro-card">
+                <img src="imgs/livro_suspense9.webp" alt="Livro Ponto Final">
+                <div class="livro-info">
+                    <span class="livro-tag">Thriller Psicológico</span>
+                    <h3>Ponto Final</h3>
+                    <p class="livro-autor"><strong>Autor:</strong> A. J. Finn</p>
+                    <p class="livro-preco">R$ 46,90</p>
+                    <p>O autor best-seller de 'A Mulher na Janela' constrói um thriller claustrofóbico sobre pistas e manuscritos fatais.</p>
+                </div>
+                <div class="livro-acoes">
+                    <button type="button" class="botao botao-carrinho" onclick="adicionarAoCarrinho(29)">🛒 Comprar</button>
+                    <button type="button" class="botao botao-reserva" onclick="abrirReserva(29)">📅 Reservar</button>
+                    <button type="button" class="botao botao-secundario" onclick="adicionarFavorito(29)" title="Salvar nos Favoritos">♡</button>
+                </div>
+            </article>
+
+            <article class="livro-card">
+                <img src="imgs/livro_suspense10.webp" alt="Livro A Cirurgiã">
+                <div class="livro-info">
+                    <span class="livro-tag">Suspense Médico</span>
+                    <h3>A Cirurgiã</h3>
+                    <p class="livro-autor"><strong>Autora:</strong> Leslie Wolfe</p>
+                    <p class="livro-preco">R$ 45,90</p>
+                    <p>Uma cirurgiã precisa operar na mesa o homem que destruiu sua vida, com toda a equipe médica assistindo.</p>
+                </div>
+                <div class="livro-acoes">
+                    <button type="button" class="botao botao-carrinho" onclick="adicionarAoCarrinho(30)">🛒 Comprar</button>
+                    <button type="button" class="botao botao-reserva" onclick="abrirReserva(30)">📅 Reservar</button>
+                    <button type="button" class="botao botao-secundario" onclick="adicionarFavorito(30)" title="Salvar nos Favoritos">♡</button>
+                </div>
+            </article>
+        </section>
+
+    </main>
+
+    <footer>
+        <div class="footer-conteudo">
+            <div class="footer-coluna">
+                <h3>Biblioteca Lilás</h3>
+                <p>
+                    Incentivando o gosto pela leitura, o raciocínio e a criatividade através
+                    de um acervo moderno, acessível e diversificado para toda a comunidade.
+                </p>
+            </div>
+
+            <div class="footer-coluna">
+                <h3>Navegação Rápida</h3>
+                <ul>
+                    <li><a href="index.html">Início</a></li>
+                    <li><a href="catalogo.html">Catálogo Completo</a></li>
+                    <li><a href="tabela.html">Tabela de Tarifas e Regras</a></li>                    <li><a href="favoritos.html">Meus Favoritos</a></li>
+                    <li><a href="carrinho.html">Meu Carrinho</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-coluna">
+                <h3>Departamentos</h3>
+                <ul>
+                    <li><a href="livros.html">Fantasia & Ficção</a></li>
+                    <li><a href="romance.html">Romance & Poesia</a></li>
+                    <li><a href="suspense.html">Suspense & Mistério</a></li>
+                    <li><a href="jogos.html">Jogos de Mesa & Cartas</a></li>
+                    <li><a href="multimidia.html">Espaço Multimídia</a></li>
+                    <li><a href="contatos.html">Fale Conosco</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-coluna">
+                <h3>Links e Redes</h3>
+                <ul>
+                    <li><a href="https://www.skoob.com.br" target="_blank" rel="noopener noreferrer">Perfil no Skoob</a></li>
+                    <li><a href="https://books.google.com.br" target="_blank" rel="noopener noreferrer">Google Livros</a></li>
+                    <li><a href="https://www.up.edu.br" target="_blank" rel="noopener noreferrer">Universidade Positivo</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="footer-copy">
+            <p>© 2026 Biblioteca Lilás. Projeto Front-End para Web - Universidade Positivo. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="js/scripts.js"></script>
+</body>
+</html>
